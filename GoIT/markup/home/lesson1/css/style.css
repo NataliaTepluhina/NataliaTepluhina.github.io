@@ -1,6 +1,6 @@
 
-body{
-  background-color: #E0FFFF
+body {
+  background-color: #E0FFFF;
 }
 h1 {
   text-align: center;
@@ -10,22 +10,19 @@ h1 {
   width:900px;
   margin-left:470px;
   padding: 50px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
--moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
-
-.text1 {
-  font-size: 20px;
-  text-align: center;;
-}
-
-.text2 {
-  font-size: 20px;
-  margin-left: 10px;
-}
-
 .centered {
   width:20%;
   margin:0 auto;
+}
+.text1 {
+  font-size: 20px;
+  text-align: center;
+}
+.text2 {
+  font-size: 20px;
+  margin-left: 10px;
 }
