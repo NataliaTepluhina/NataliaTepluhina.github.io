@@ -1,1 +1,0 @@
-# NataliaTepluhina.github.io
