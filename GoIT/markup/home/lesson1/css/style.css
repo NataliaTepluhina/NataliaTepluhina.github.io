@@ -1,28 +1,36 @@
 
 body {
-  background-color: #E0FFFF;
+  background-color: #D3D3D3;
 }
 h1 {
   text-align: center;
 }
 .main {
   background-color: white;
-  width:900px;
-  margin-left:470px;
+  width:600px;
+  margin:0 auto;
   padding: 50px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 }
 .centered {
-  width:20%;
+  width:30%;
   margin:0 auto;
 }
-.text1 {
+.article {
   font-size: 20px;
-  text-align: center;
+  padding-left: 20px;
+  padding-top: 15px;
+  margin-top: 20px;
+  border-top: 1px solid grey;
 }
-.text2 {
-  font-size: 20px;
-  margin-left: 10px;
+
+.article:nth-of-type(2) {
+  border-top: none;
+}
+.break {
+    float: left;
+    width: 100%;
+    margin: 0 0 25px 0;
 }
