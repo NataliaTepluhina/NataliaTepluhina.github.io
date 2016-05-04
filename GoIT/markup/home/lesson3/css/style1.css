@@ -2,30 +2,23 @@
     font-family: OpenSans;
     src: local("Open Sans"), url(../fonts/2211.ttf);
    }
-/*Main block*/
+/*MAIN BLOCK*/
 .container {
-  width: 1050px;
+  width: 953px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top:0;
   margin: 0 auto;
   padding: 50px;
   box-shadow: 0 3px 0px 0px white, 0 -3px 0px 0px white, 0px 0px 3px 1px rgba(219, 219, 219, 1), 0px 0px 3px 1px rgba(219, 219, 219, 1);
 }
-/*Navigation panel*/
+/*NAVIGATION PANEL*/
 .nav {
-  width: 100%;
+  width: inherit;
   height: 40px;
   margin: 40px 0;
-  background: rgb(67, 67, 67);
-  background: -moz-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
-  background: -webkit-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
-  background: -o-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
-  background: -ms-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
-  background: linear-gradient(0deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
-}
-.nav li {
-  display: inline-block;
-  width: 100px;
-  height: 40px;
-  margin-right: 50px;
   background: rgb(67, 67, 67);
   background: -moz-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
   background: -webkit-linear-gradient(270deg, rgb(67, 67, 67) 23%, rgb(94, 94, 94) 80%);
@@ -37,6 +30,12 @@
   font-family: OpenSans;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
   line-height: 40px;
+
+}
+.nav li {
+  display: inline-block;
+  width: 100px;
+  margin-right: 50px;
   text-align: center;
   }
 .nav li:hover{
@@ -50,7 +49,7 @@
   background: -ms-linear-gradient(270deg, rgb(46, 46, 46) 25%, rgb(74, 74, 74) 100%);
   background: linear-gradient(0deg, rgb(46, 46, 46) 25%, rgb(74, 74, 74) 100%);
 }
-/*Sidebar*/
+/*SIDEBAR*/
 .sidebar {
   float: left;
   width: 225px;
@@ -71,4 +70,41 @@
 .sidebar li:hover {
   color: black;
   padding-left: 40px
+}
+/*CONTENT*/
+.content {
+  margin-left: 275px;
+}
+p{
+  margin-top: 40px;
+  padding-left: 25px;
+  font-size: 13.33px;
+  font-family: OpenSans;
+  line-height: 20px;
+}
+/*FOOTER*/
+.footer {
+  height: 40px;
+  width: inherit;
+  background-color: #e1e1e1;
+  position: absolute;
+  bottom: 75px;
+  line-height: 40px;
+  font-size: 13.33px;
+  font-family: OpenSans;
+}
+.footer li {
+  display: inline-block;
+  width: 100px;
+  margin-right: 50px;
+  text-align: center;
+  }
+.footer li:hover {
+  text-decoration: underline;
+}
+.footer li:last-child {
+  width: 220px;
+  float:right;
+  margin-right: 0;
+  text-decoration: none;
 }
