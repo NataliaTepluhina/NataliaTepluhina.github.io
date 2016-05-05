@@ -8,8 +8,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
   top:0;
+  bottom: 0;
   margin: 0 auto;
   padding: 50px;
   box-shadow: 0 3px 0px 0px white, 0 -3px 0px 0px white, 0px 0px 3px 1px rgba(219, 219, 219, 1), 0px 0px 3px 1px rgba(219, 219, 219, 1);
@@ -87,8 +87,7 @@ p{
   height: 40px;
   width: inherit;
   background-color: #e1e1e1;
-  position: absolute;
-  bottom: 75px;
+  margin-top: 75px;
   line-height: 40px;
   font-size: 13.33px;
   font-family: OpenSans;
