@@ -5,7 +5,6 @@
 /*MAIN BLOCK*/
 .container {
   width: 953px;
-  position: absolute;
   left: 0;
   right: 0;
   top:0;
@@ -37,6 +36,7 @@
   width: 100px;
   margin-right: 50px;
   text-align: center;
+  cursor: pointer;
   }
 .nav li:hover{
   border-left: 1px solid #838383;
@@ -63,6 +63,7 @@
   line-height: 40px;
   padding-left: 25px;
   border-bottom: 1px solid #c8c8c8;
+  cursor: pointer;
   }
 .sidebar li:last-child {
   border-bottom: none;
@@ -91,6 +92,7 @@ p{
   line-height: 40px;
   font-size: 13.33px;
   font-family: OpenSans;
+  cursor: pointer;
 }
 .footer li {
   display: inline-block;
@@ -106,4 +108,5 @@ p{
   float:right;
   margin-right: 0;
   text-decoration: none;
+  cursor: default;
 }
