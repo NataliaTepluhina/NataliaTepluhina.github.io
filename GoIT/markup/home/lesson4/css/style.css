@@ -2,7 +2,7 @@ body {
   background: url("../img/back.png");
 }
 .clearfix:after{
-  content: '';
+  content: "";
   clear: both;
   display: block;
 }
@@ -73,13 +73,14 @@ body {
 
 /*NAVIGATION BAR*/
 ul.menu {
+  position: relative;
   height: 28px;
   margin-top: -2px;
   border-bottom: 1px solid black;
   background: rgb(48, 48, 48);
   background: linear-gradient(0deg, rgb(48, 48, 48) 10%, rgb(55, 55, 55) 87%);
   box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
-  /*margin-bottom: 5px;*/
+  z-index: 2;
 }
 ul.menu > li {
   float: left;
@@ -174,9 +175,8 @@ ul.menu > li:hover > ul.submenu {
   padding-top: 3px;
 }*/
 .copy {
-  clear: both;
   padding-top: 10px;
   font: 12px Tahoma;
   color: white;
   text-align: center;
-  }
+}
