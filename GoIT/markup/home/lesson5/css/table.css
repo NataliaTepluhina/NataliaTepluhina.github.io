@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+}
+td {
+border: 3px solid black;
+padding: 10px 16px;
+text-align: center;
+}
+.invis {
+  display: block;
+  opacity: 0;
+}
+.yellow {
+  background-color: yellow;
+}
+.orange {
+  background-color: orange;
+}
+.black {
+  background-color: black;
+}
+.blue {
+  background-color: blue;
+}
