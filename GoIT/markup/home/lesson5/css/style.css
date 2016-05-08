@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helveticaneue-thin-webfont.eot');
+    src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+         url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  font-family: "Helvetica Neue", Tahoma;
+  font-size: 14px;
+  background-image: url(../img/back.png)
+}
+
+/*NAVIGATION BAR*/
+.nav {
+  height: 36px;
+  line-height: 36px;
+  padding-right: 20px;
+  background-image: url(../img/back1.png);
+}
+.nav::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.nav span {
+  text-decoration: underline;
+}
+.nav a {
+  float: right;
+  padding: 0 10px;
+  text-decoration: none;
+}
+.nav img {
+  float:left;
+  padding-top: 4px;
+  padding-right: 5px;
+  }
+.nav li > a {
+    color: #60b5ed;
+  }
+.nav li > a:hover {
+  background-color: #4eabda;
+  color: white;
+}
+.ola {
+  padding-top: 1px;
+  line-height: 34px;
+  border: 1px solid #4c9dd7;
+  background: rgb(46, 122, 196);
+  background: -moz-linear-gradient(270deg, rgb(46, 122, 196) 30%, rgb(81, 177, 220) 82%);
+  background: -webkit-linear-gradient(270deg, rgb(46, 122, 196) 30%, rgb(81, 177, 220) 82%);
+  background: -o-linear-gradient(270deg, rgb(46, 122, 196) 30%, rgb(81, 177, 220) 82%);
+  background: -ms-linear-gradient(270deg, rgb(46, 122, 196) 30%, rgb(81, 177, 220) 82%);
+  background: linear-gradient(0deg, rgb(46, 122, 196) 30%, rgb(81, 177, 220) 82%);
+  color: white;
+}
+.ola2 {
+  margin-top: 4px;
+  padding-top: 1px;
+  line-height: 28px;
+  border-left: 1px solid #4c9dd7;
+  color: white;
+}
+
+/*LOGIN FORM*/
+.loginform {
+  width: 560px;
+  height: 613px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -307px;
+  margin-left: -280px;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  color: white;
+}
+.loginform h1 {
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Helvetica Neue", Tahoma;
+  font-size: 24px;
+  color: white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+.wrap {
+  width: 270px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.wrap img {
+  margin: 15px 0;
+}
+.abs {
+  position: absolute;
+  left: 275px;
+  top: 162px;
+  color: #999999;
+}
+input[type="text"], [type="email"], [type="password"] {
+  width: 270px;
+  margin-top: 20px;
+  padding-left: 20px;
+  line-height: 30px;
+  background-color: black;
+  color: #cccccc;
+  font-family: "Helvetica Neue";
+  border: none;
+  border-bottom: 1px solid #474747;
+}
+input::-webkit-input-placeholder {
+  color:#cccccc;
+}
+input[type="text"]:focus, [type="email"]:focus, [type="password"]:focus {
+  border: none;
+  border-bottom: 1px solid #689bcc;
+  outline: none;
+  background-color: #1b5288;
+  color: white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(111, 203, 230, 1), inset 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 0px 10px 0px rgba(111, 203, 230, 1), inset 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 0px 10px 0px rgba(111, 203, 230, 1), inset 0px 2px 5px -1px rgba(50, 50, 50, 0.75);
+}
+input[type="text"]:focus::-webkit-input-placeholder, [type="email"]:focus::-webkit-input-placeholder, [type="password"]:focus::-webkit-input-placeholder {
+  color:white;
+}
+input[type="checkbox"] {
+  margin-top: 20px;
+}
+input[type="submit"] {
+display: block;
+margin: 0 auto;
+margin-top: 20px;
+padding: 0 15px;
+line-height: 30px;
+color: white;
+font-family: "Helvetica Neue";
+border: none;
+cursor: pointer;
+background: rgb(46, 122, 196);
+background: -moz-linear-gradient(270deg, rgb(46, 122, 196) 35%, rgb(80, 174, 219) 82%);
+background: -webkit-linear-gradient(270deg, rgb(46, 122, 196) 35%, rgb(80, 174, 219) 82%);
+background: -o-linear-gradient(270deg, rgb(46, 122, 196) 35%, rgb(80, 174, 219) 82%);
+background: -ms-linear-gradient(270deg, rgb(46, 122, 196) 35%, rgb(80, 174, 219) 82%);
+background: linear-gradient(0deg, rgb(46, 122, 196) 35%, rgb(80, 174, 219) 82%);
+border-radius: 3px;
+border: 1px solid;
+border-bottom-color: #3686ca;
+border-top-color: #6bb8e7;
+border-left-color: #3a8ecd;
+border-right-color: #519fd9;
+}
+.loginform > p {
+  display: block;
+  width: 290px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  color: #cccccc;
+}
