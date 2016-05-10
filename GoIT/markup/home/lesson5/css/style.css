@@ -105,14 +105,70 @@ body {
   margin: 0 auto;
   padding-top: 20px;
 }
-.wrap img {
-  margin: 15px 0;
+.facebook {
+  display: inline-block;
+  width: 285px;
+  height: 35px;
+  margin-top: 20px;
+  line-height: 35px;
+  background: rgb(48, 66, 114);
+  background: -moz-linear-gradient(270deg, rgb(48, 66, 114) 42%, rgb(59, 88, 148) 100%);
+  background: -webkit-linear-gradient(270deg, rgb(48, 66, 114) 42%, rgb(59, 88, 148) 100%);
+  background: -o-linear-gradient(270deg, rgb(48, 66, 114) 42%, rgb(59, 88, 148) 100%);
+  background: -ms-linear-gradient(270deg, rgb(48, 66, 114) 42%, rgb(59, 88, 148) 100%);
+  background: linear-gradient(0deg, rgb(48, 66, 114) 42%, rgb(59, 88, 148) 100%);
+  border-top: 1px solid #7789b7;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.abs {
-  position: absolute;
-  left: 275px;
-  top: 162px;
+.fb {
+  float: left;
+  width: 37px;
+  border-right: 1px solid #213c71;
+  font-size: 23px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Arial;
+  text-align: center;
+}
+.fbtext {
+  width: 240px;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Tahoma;
+  text-align: center;
+  border-left: 1px solid #4d66a6;
+}
+.fbtext span {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: Tahoma;
+  text-align: center;
+}
+.ou {
+  width: 280px;
+  margin-top: 20px;
+  display: block;
   color: #999999;
+  text-align: center;
+}
+.ou::before {
+  width: 124px;
+  content: '';
+  float: left;
+  margin-top: 7px;
+  margin-right: 5px;
+  box-shadow: 0 1px black;
+  border-bottom: 1px solid #606060;
+}
+.ou::after {
+  width: 124px;
+  content: '';
+  float: right;
+  margin-top: 7px;
+  margin-left: 5px;
+  box-shadow: 0 1px black;
+  border-bottom: 1px solid #606060;
 }
 input[type="text"], [type="email"], [type="password"] {
   width: 270px;
