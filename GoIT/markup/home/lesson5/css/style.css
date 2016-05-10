@@ -8,10 +8,15 @@
     font-weight: normal;
     font-style: normal;
 }
+html {
+  height: 100%;
+}
 body {
   font-family: "Helvetica Neue", Tahoma;
   font-size: 14px;
-  background-image: url(../img/back.png)
+  background-image: url(../img/back.png);
+  background-size: cover;
+  height: 100%;
 }
 
 /*NAVIGATION BAR*/
@@ -20,6 +25,8 @@ body {
   line-height: 36px;
   padding-right: 20px;
   background-image: url(../img/back1.png);
+  background-size: cover;
+  margin: 0 auto;
 }
 .nav::after {
   content: '';
@@ -67,6 +74,12 @@ body {
 }
 
 /*LOGIN FORM*/
+.container {
+  position: relative;
+  margin: 0 auto;
+  height: 96%;
+  overflow: hidden;
+}
 .loginform {
   width: 560px;
   height: 613px;
