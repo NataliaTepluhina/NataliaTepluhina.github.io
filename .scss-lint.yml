@@ -1,0 +1,17 @@
+linters:
+  PropertySortOrder:
+    order: smacss
+  Indentation:
+    width: 4
+  ColorVariable:
+    enabled: false
+  EmptyLineBetweenBlocks:
+    ignore_single_line_blocks: false
+  MergeableSelector:
+    force_nesting: false
+  TransitionAll:
+    enabled: true
+  VendorPrefix:
+    enabled: false
+  Comment:
+    enabled: false

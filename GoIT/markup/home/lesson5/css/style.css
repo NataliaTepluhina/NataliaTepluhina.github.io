@@ -8,15 +8,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
 html {
-  height: 100%;
+    height: 100%;
 }
+
 body {
-  font-family: "Helvetica Neue", Tahoma;
-  font-size: 14px;
-  background-image: url(../img/back.png);
-  background-size: cover;
-  height: 100%;
+    height: 100%;
+    background-image: url('../img/back.png');
+    background-size: cover;
+    font-family: "Helvetica Neue", Tahoma;
+    font-size: 14px;
 }
 
 /*NAVIGATION BAR*/
@@ -26,8 +28,12 @@ body {
   padding-right: 20px;
   background-image: url(../img/back1.png);
   background-size: cover;
-  margin: 0 auto;
 }
+
+.menu {
+  margin 0: auto;
+}
+
 .nav::after {
   content: '';
   clear: both;
@@ -95,7 +101,7 @@ body {
 .loginform h1 {
   padding: 20px 0;
   text-align: center;
-  font-family: "Helvetica Neue", Tahoma;
+  font-family: 'Helvetica Neue', Tahoma;
   font-size: 24px;
   color: white;
   border-bottom: 2px solid rgba(255, 255, 255, 0.6);

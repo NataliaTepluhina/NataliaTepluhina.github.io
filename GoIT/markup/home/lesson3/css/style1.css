@@ -4,7 +4,7 @@
    }
 /*MAIN BLOCK*/
 .container {
-  width: 953px;
+    width: 953px;
   left: 0;
   right: 0;
   top:0;
@@ -37,7 +37,7 @@
   margin-right: 50px;
   text-align: center;
   cursor: pointer;
-  }
+}
 .nav li:hover{
   border-left: 1px solid #838383;
   border-right: 1px solid #838383;
