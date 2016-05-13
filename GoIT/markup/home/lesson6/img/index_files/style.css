@@ -108,10 +108,10 @@
     margin-top: 6px;
     margin-right: 10px;
     float: right;
-    border-bottom: 1px solid #7c8794;
     color: #bfbfbf;
     line-height: 13px;
     text-decoration: none;
+    border-bottom: 1px solid #7c8794;
 }
 
 .contact {
@@ -139,8 +139,8 @@ header > img {
 nav {
     height: 32px;
     margin: 3px 50px 0 39px;
-    padding-right: 13px;
     padding-left: 120px;
+    padding-right: 13px;
     border: 1px solid #2c345a;
     border-radius: 4px;
     background: rgb(0, 0, 0);
@@ -238,9 +238,9 @@ nav img {
 }
 
 .selectors {
+    float: left;
     margin-top: 10px;
     margin-left: 1px;
-    float: left;
 }
 
 /*LEFT FILTER*/
@@ -260,14 +260,14 @@ nav img {
 }
 
 .car-select header {
-    height: 15px;
     color: #154467;
     font-family: 'Arial Black';
+    height: 15px;
 }
 
 .car-select header h1 {
-    padding-top: 1px;
     padding-right: 72px;
+    padding-top: 1px;
     float: left;
     font-size: 79%;
     text-align: center;
@@ -299,16 +299,16 @@ nav img {
 }
 
 .car-filters-text {
-    width: 72px;
     padding-top: 12px;
     float: left;
+    width: 72px;
 }
 
 .car-filters-text p {
     margin-bottom: 8px;
-    font-family: Arial;
-    font-size: 64%;
     line-height: 8px;
+    font-size: 64%;
+    font-family: Arial;
 }
 
 .car-filters-text span {
@@ -316,15 +316,15 @@ nav img {
 }
 
 .car-filters-selection {
-    width: 102px;
     float: left;
+    width: 102px;
 }
 
 .cfs-1 {
-    width: 101px;
-    height: 16px;
     margin-top: 5px;
     margin-left: 3px;
+    width: 101px;
+    height: 16px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -354,10 +354,10 @@ nav img {
 }
 
 .cfs-2 {
-    width: 58px;
-    height: 16px;
     margin-top: 5px;
     margin-left: 3px;
+    width: 58px;
+    height: 16px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -493,10 +493,10 @@ nav img {
 }
 
 .tsf-2 {
-    width: 52px;
-    height: 15px;
     margin-top: 4px;
     margin-left: 1px;
+    width: 52px;
+    height: 15px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -525,10 +525,10 @@ nav img {
 }
 
 .tsf-3 {
+    clear: both;
+    margin-left: 4px;
     width: 44px;
     height: 15px;
-    margin-left: 4px;
-    clear: both;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
     background: url('../img/arrow.png') no-repeat;
@@ -583,12 +583,12 @@ nav img {
 }
 
 .check input:not(checked) + label:before {
-    width: 9px;
-    height: 9px;
     position: absolute;
     content: '';
     top: 0;
     left: 0;
+    width: 9px;
+    height: 9px;
     margin-top: 1px;
     border-top: 1px solid #707070;
     border-left: 1px solid #afafaf;
@@ -613,14 +613,14 @@ nav img {
 .check label span {
     font-family: 'Lucida Sans Unicode';
     font-size: 12px;
-    line-height: 10px;
     vertical-align: top;
+    line-height: 10px;
 }
 
 
 .tire-select a {
-    margin-top: -3px;
     margin-right: 19px;
+    margin-top: -3px;
     float: right;
     border-bottom: 2px solid #99a6b3;
     color: #154467;
@@ -665,38 +665,38 @@ nav img {
 .p1 {
     margin-top: 11px;
     margin-left: 16px;
-    font-family: 'Lucida Sans Unicode';
-    font-size: 69%;
     line-height: 6px;
+    font-size: 69%;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .p2 {
     margin-top: 5px;
     margin-left: 16px;
-    font-family: 'Lucida Sans Unicode';
-    font-size: 69%;
     line-height: 8px;
+    font-size: 69%;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .span1 {
     padding-top: 1px;
-    color: #77858b;
-    font-size: 95%;
     line-height: 6px;
+    font-size: 95%;
+    color: #77858b;
 }
 
 .span2 {
     padding-top: 4px;
-    color: #77858b;
-    font-size: 89%;
     line-height: 9px;
+    font-size: 89%;
+    color: #77858b;
 }
 
 .span3 {
     padding-top: 4px;
-    color: #77858b;
-    font-size: 90%;
     line-height: 10px;
+    font-size: 90%;
+    color: #77858b;
 }
 
 .dsl-filters {
@@ -705,10 +705,10 @@ nav img {
 }
 
 .dslf-1 {
-    width: 55px;
-    height: 15px;
     margin-top: 4px;
     margin-left: 1px;
+    width: 55px;
+    height: 15px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -739,10 +739,10 @@ nav img {
 }
 
 .dslf-2 {
-    width: 49px;
-    height: 16px;
     margin-top: 16px;
     margin-left: 1px;
+    width: 49px;
+    height: 16px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -773,10 +773,10 @@ nav img {
 }
 
 .dslf-3 {
-    width: 57px;
-    height: 16px;
     margin-top: 15px;
     margin-left: 1px;
+    width: 57px;
+    height: 16px;
     float: left;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
@@ -818,24 +818,26 @@ nav img {
 
 .disc-select-right p {
     margin-top: 6px;
-    font-family: 'Lucida Sans Unicode';
-    font-size: 64%;
     line-height: 1px;
+    font-size: 64%;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .disc-select-right span {
     display: block;
     padding-top: 4px;
-    color: #77858b;
-    font-family: 'Lucida Sans Unicode';
-    font-size: 55%;
     line-height: 8px;
+    font-size: 55%;
+    font-family: 'Lucida Sans Unicode';
+    color: #77858b;
 }
 
 .dsrf-1 {
+    margin-top: 3px;
+    margin-left: 1px;
+    margin-bottom: 13px;
     width: 56px;
     height: 15px;
-    margin: 3px 0 13px 1px;
     border-top: 1px solid #b0b0b0;
     border-left: 1px solid #b0b0b0;
     background: url('../img/arrow.png') no-repeat;
@@ -877,34 +879,35 @@ nav img {
 
 /*LEFT SIDEBAR*/
 .left-side {
-    width: 192px;
-    height: 627px;
     margin-top: 18px;
     margin-left: 38px;
     float: left;
+    width: 192px;
+    height: 627px;
 }
 
 .left-side header {
     width: 180px;
     height: 25px;
     margin-bottom: 13px;
+    color: #114165;
     border: 1px solid #8b979c;
     border-radius: 25px;
-    color: #114165;
+    line-height: 26px;
     font-family: 'Lucida Sans Unicode';
     font-size: 79%;
-    line-height: 26px;
-    -webkit-box-shadow: 2px 2px 3px 0 rgba(50, 50, 50, .5);
-    -moz-box-shadow:    2px 2px 3px 0 rgba(50, 50, 50, .5);
-    box-shadow:         2px 2px 3px 0 rgba(50, 50, 50, .5);
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    2px 2px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         2px 2px 3px 0px rgba(50, 50, 50, 0.5);
 }
 
 .catalog-icon {
-    width: 20px;
-    height: 20px;
     margin-top: 2px;
     margin-left: 3px;
+    width: 20px;
+    height: 20px;
     float: left;
+    color: #114165;
     border-radius: 20px;
     background: rgb(29, 64, 98);
     background: -moz-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
@@ -912,7 +915,7 @@ nav img {
     background: -o-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
     background: -ms-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
     background: linear-gradient(0deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
-    color: #114165;
+
 }
 
 .catalog-icon img {
@@ -930,9 +933,9 @@ nav img {
     height: 26px;
     margin-top: 13px;
     margin-left: 2px;
+    color: #114165;
     border: 1px solid #79878d;
     border-radius: 23px;
-    color: #114165;
     font-family: 'Lucida Sans Unicode';
     font-size: 14px;
     line-height: 26px;
@@ -945,7 +948,7 @@ nav img {
     margin-left: 4px;
     float: left;
     border-radius: 22px;
-    background: #114165;
+    background: #114165
 }
 
 .inner-circle {
@@ -955,13 +958,13 @@ nav img {
     margin-top: 5px;
     margin-left: 5px;
     border-radius: 11px;
-    background: #fff;
+    background: #fff
 }
 
 .left-vares p {
+    float: left;
     padding-top: 2px;
     padding-left: 3px;
-    float: left;
 }
 
 .left-vares-1 {
@@ -969,18 +972,18 @@ nav img {
     height: 26px;
     margin-top: -9px;
     margin-left: 2px;
+    color: #114165;
     border: 1px solid #79878d;
     border-radius: 23px;
-    color: #114165;
     font-family: 'Lucida Sans Unicode';
     font-size: 14px;
     line-height: 26px;
 }
 
 .left-vares-1 p {
+    float: left;
     padding-top: 2px;
     padding-left: 3px;
-    float: left;
 }
 
 .left-side ul {
@@ -1004,22 +1007,22 @@ nav img {
 }
 
 .li-active {
-    list-style-image: url('../img/lihover.png');
+    list-style-image: url('../img/lihover.png')
 }
 
 .li-active a {
-    border-bottom: 2px solid #58697f;
     color: #0c3256;
+    border-bottom: 2px solid #58697f;
     font: italic bold 14px Arial;
 }
 
 .left-side li:hover {
-    list-style-image: url('../img/lihover.png');
+    list-style-image: url('../img/lihover.png')
 }
 
 .left-side a:hover {
-    border-bottom: 2px solid #58697f;
     color: #0c3256;
+    border-bottom: 2px solid #58697f;
     font: italic bold 14px Arial;
 }
 
@@ -1058,8 +1061,8 @@ nav img {
 .goodyear figcaption h1 {
     color: #206988;
     font: 96% 'Lucida Sans Unicode';
+    text-shadow: 0px 1px 1px rgba(144, 170, 184, 1);
     line-height: 15px;
-    text-shadow: 0 1px 1px rgba(144, 170, 184, 1);
 }
 
 .goodyear figcaption p {
@@ -1073,14 +1076,14 @@ nav img {
     padding-left: 13px;
     color: #114165;
     font: italic bold 97% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 .goodyear span {
     padding-left: 6px;
     color: #114165;
     font: italic bold 83% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 .goodyear-image {
@@ -1088,9 +1091,9 @@ nav img {
     height: 127px;
     margin-top: -3px;
     margin-left: 1px;
+    background: #fff;
     border: 1px solid #b0b9bc;
     border-radius: 8px;
-    background: #fff;
 }
 
 .goodyear-image img {
@@ -1111,8 +1114,8 @@ nav img {
     margin-left: 5px;
     color: #206988;
     font: 96% 'Lucida Sans Unicode';
+    text-shadow: 0px 1px 1px rgba(144, 170, 184, 1);
     line-height: 15px;
-    text-shadow: 0 1px 1px rgba(144, 170, 184, 1);
 }
 
 .nokian figcaption p {
@@ -1126,14 +1129,14 @@ nav img {
     padding-left: 16px;
     color: #114165;
     font: italic bold 97% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 .nokian span {
     padding-left: 8px;
     color: #114165;
     font: italic bold 83% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 .nokian-image {
@@ -1141,9 +1144,9 @@ nav img {
     height: 127px;
     margin-top: -3px;
     margin-left: 1px;
+    background: #fff;
     border: 1px solid #b0b9bc;
     border-radius: 8px;
-    background: #fff;
 }
 
 .nokian-image img {
@@ -1164,8 +1167,8 @@ nav img {
     margin-left: 7px;
     color: #206988;
     font: 96% 'Lucida Sans Unicode';
+    text-shadow: 0px 1px 1px rgba(144, 170, 184, 1);
     line-height: 15px;
-    text-shadow: 0 1px 1px rgba(144, 170, 184, 1);
 }
 
 .hankook figcaption p {
@@ -1179,14 +1182,14 @@ nav img {
     padding-left: 15px;
     color: #114165;
     font: italic bold 97% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 .hankook span {
     padding-left: 7px;
     color: #114165;
     font: italic bold 83% Arial;
-    text-shadow: 0 1px 1px rgba(138, 154, 167, 1);
+    text-shadow: 0px 1px 1px rgba(138, 154, 167, 1);
 }
 
 /*RIGHT SIDEBAR*/
@@ -1202,24 +1205,27 @@ nav img {
 .right-side header {
     width: 180px;
     height: 25px;
-    margin: 1px 0 13px 9px;
+    margin-top: 1px;
+    margin-left: 9px;
+    margin-bottom: 13px;
+    color: #114165;
     border: 1px solid #8b979c;
     border-radius: 25px;
-    color: #114165;
+    line-height: 26px;
     font-family: 'Lucida Sans Unicode';
     font-size: 85%;
-    line-height: 26px;
-    -webkit-box-shadow: 2px 2px 3px 0 rgba(50, 50, 50, .5);
-    -moz-box-shadow:    2px 2px 3px 0 rgba(50, 50, 50, .5);
-    box-shadow:         2px 2px 3px 0 rgba(50, 50, 50, .5);
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    2px 2px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         2px 2px 3px 0px rgba(50, 50, 50, 0.5);
 }
 
 .catalog-icon-2 {
-    width: 22px;
-    height: 22px;
     margin-top: 1px;
     margin-left: 3px;
+    width: 22px;
+    height: 22px;
     float: left;
+    color: #114165;
     border-radius: 20px;
     background: rgb(29, 64, 98);
     background: -moz-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
@@ -1227,7 +1233,7 @@ nav img {
     background: -o-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
     background: -ms-linear-gradient(270deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
     background: linear-gradient(0deg, rgb(29, 64, 98) 23%, rgb(31, 103, 134) 100%);
-    color: #114165;
+
 }
 
 .catalog-icon-2 img {
@@ -1245,18 +1251,18 @@ nav img {
     height: 26px;
     margin-top: 14px;
     margin-left: 24px;
+    color: #114165;
     border: 1px solid #79878d;
     border-radius: 23px;
-    color: #114165;
     font-family: 'Lucida Sans Unicode';
     font-size: 14px;
     line-height: 26px;
 }
 
 .right-vares p {
+    float: left;
     padding-top: 1px;
     padding-left: 4px;
-    float: left;
 }
 
 .right-checkboxes {
@@ -1266,7 +1272,7 @@ nav img {
 
 .right-check {
     height: 13px;
-    padding-bottom: 12px;
+    padding-bottom: 12px;;
 }
 
 .right-check input:not(checked) {
@@ -1319,18 +1325,18 @@ nav img {
     height: 26px;
     margin-top: 2px;
     margin-left: 22px;
+    color: #114165;
     border: 1px solid #79878d;
     border-radius: 23px;
-    color: #114165;
     font-family: 'Lucida Sans Unicode';
     font-size: 14px;
     line-height: 26px;
 }
 
 .right-vares-2 p {
+    float: left;
     padding-top: 1px;
     padding-left: 5px;
-    float: left;
 }
 
 .right-checkboxes-2 {
@@ -1343,6 +1349,7 @@ nav img {
     height: 24px;
     margin-top: 8px;
     margin-left: 33px;
+    color: #e5e9ea;
     border-top: 1px solid #7a95a1;
     border-bottom: 1px solid #7a95a1;
     border-radius: 24px;
@@ -1352,11 +1359,10 @@ nav img {
     background: -o-linear-gradient(270deg, rgb(12, 51, 87) 26%, rgb(31, 103, 135) 95%);
     background: -ms-linear-gradient(270deg, rgb(12, 51, 87) 26%, rgb(31, 103, 135) 95%);
     background: linear-gradient(0deg, rgb(12, 51, 87) 26%, rgb(31, 103, 135) 95%);
-    color: #e5e9ea;
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(191, 193, 194, 1);
+    -moz-box-shadow:    2px 2px 3px 0px rgba(191, 193, 194, 1);
+    box-shadow:         2px 2px 3px 0px rgba(191, 193, 194, 1);
     font: 71% Arial;
-    -webkit-box-shadow: 2px 2px 3px 0 rgba(191, 193, 194, 1);
-    -moz-box-shadow: 2px 2px 3px 0 rgba(191, 193, 194, 1);
-    box-shadow: 2px 2px 3px 0 rgba(191, 193, 194, 1);
     line-height: 23px;
     text-align: center;
 }
@@ -1364,7 +1370,7 @@ nav img {
 /*FOOTER*/
 
 .car-logos {
-    height: 61px;
+    height: 100px;
     margin-top: 26px;
     margin-left: 157px;
 
@@ -1376,89 +1382,37 @@ nav img {
 
 .car-logo1 {
     margin-top: 13px;
-    padding-bottom: 2px;
 }
 
 .car-logo2 {
     margin-left: 7px;
-    padding-bottom: 9px;
+    padding-bottom: 7px;
 }
 
 .car-logo3 {
     margin-left: 9px;
-    padding-bottom: 2px;
 }
 
 .car-logo4 {
     margin-left: 11px;
-    padding-bottom: 2px;
 }
 
 .car-logo5 {
-    margin-left: 8px;
-    padding-bottom: 8px;
+    margin-top: 1px;
+    margin-left: 1px;
 }
 
 .car-logo6 {
-    margin-top: 9px;
-    margin-left: 9px;
+    margin-top: 1px;
+    margin-left: 1px;
 }
 
 .car-logo7 {
-    margin-left: 9px;
-    padding-bottom: 8px;
+    margin-top: 1px;
+    margin-left: 1px;
 }
 
 .car-logo8 {
-    margin-left: 11px;
-    padding-bottom: 9px;
-}
-
-.basement {
-    width: 910px;
-    height: 100px;
-    margin-left: 39px;
-    background: #213a4d;
-    text-align: center;
-}
-
-.bottom-menu {
-    display: block;
-    margin-left: 307px;
-    padding-top: 9px;
-}
-
-.bottom-menu li {
-    float: left;
-    text-align: center;
-}
-
-.bottom-menu a {
-    padding-right: 12px;
-    padding-left: 12px;
-    border-left: 1px solid #bec6c9;
-    color: #bec6c9;
-    font: 78% Arial;
-    text-decoration: none;
-}
-
-.bottom-menu a:nth-of-type(3) {
-    padding-left: 12px;
-}
-
-.selected-1 a {
-    padding-right: 12px;
-    padding-left: 2px;
-    border-left: 0;
-    color: #52abcb;
-}
-
-.last a {
-    padding-left: 16px;
-}
-
-.basement p {
-    padding-top: 14px;
-    color: #7f4740;
-    font: 10px Arial;
+    margin-top: 1px;
+    margin-right: 1px;
 }
