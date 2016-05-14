@@ -1359,6 +1359,7 @@ nav img {
     box-shadow: 2px 2px 3px 0 rgba(191, 193, 194, 1);
     line-height: 23px;
     text-align: center;
+    cursor: pointer;
 }
 
 /*FOOTER*/
