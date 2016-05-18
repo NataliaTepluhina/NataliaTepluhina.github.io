@@ -15,3 +15,6 @@ linters:
     enabled: false
   Comment:
     enabled: false
+  SelectorFormat:
+    enabled: true
+    convention: 'hyphenated_BEM'

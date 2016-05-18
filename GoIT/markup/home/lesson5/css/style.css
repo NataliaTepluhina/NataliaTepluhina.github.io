@@ -22,16 +22,22 @@ body {
 }
 
 /*NAVIGATION BAR*/
+.menu {
+  height: 36px;
+  margin: 0 auto;
+}
+
+.menu::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .nav {
   height: 36px;
   line-height: 36px;
-  padding-right: 20px;
   background-image: url(../img/back1.png);
   background-size: cover;
-}
-
-.menu {
-  margin 0: auto;
 }
 
 .nav::after {
@@ -60,6 +66,7 @@ body {
   color: white;
 }
 .ola {
+  margin-right: 20px;
   padding-top: 1px;
   line-height: 34px;
   border: 1px solid #4c9dd7;
