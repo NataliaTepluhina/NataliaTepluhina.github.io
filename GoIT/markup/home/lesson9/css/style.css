@@ -14,23 +14,19 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext);
 
-@media (max-width: 960px) {
-    .container {
-        max-width: 95%;
-   }
-
-    .slider__center {
-        max-width: 95%;
+@-moz-document url-prefix() {
+    body {
+        border-top: 1px solid rgba(0, 0, 0, 0);
     }
 
-    .violet__center {
-        max-width: 95%;
+    .container {
+        border-top: 1px solid rgba(0, 0, 0, 0);
     }
 }
 
 body {
-    background: url('../img/bg.jpg') 846px repeat-x;
-    background-position: top center;
+    background: url('../img/bg.jpg') repeat-x center 0;
+    background-position: center 0;
 }
 
 .clearfix::after {
