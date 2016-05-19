@@ -46,13 +46,14 @@ body {
 
 /*HEADER*/
 
-.mainheader {
+/*.mainheader {
     width: 100%;
     margin-top: 63px;
-}
+}*/
 
 .logo {
     float: left;
+    margin-top: 63px;
     color: #fff;
     font: 291%  'League Gothic';
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
@@ -71,7 +72,7 @@ body {
 }
 
 .menu {
-    margin-top: 9px;
+    margin-top: 72px;
     float: right;
 }
 
