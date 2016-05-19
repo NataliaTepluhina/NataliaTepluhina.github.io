@@ -136,6 +136,7 @@ body {
 .smallnav__container {
     position: absolute;
     top: 742px;
+    width: 960px;
     margin: 0 auto;
 }
 
@@ -566,6 +567,10 @@ body {
         line-height: 27px;
     }
 
+    .smallnav__container {
+        top: 680px;
+        width: 768px;
+    }
 
     .smallnav {
         margin-right: 102px;
@@ -810,9 +815,8 @@ body {
         margin: 0 auto;
         margin-top: 12px;
         float: none;
+        background: url('../img/menu.png');
         border: 1px solid #000;
-        border-radius: 8px;
-        background: rgba(69, 55, 75, .9);
         text-align: center;
         z-index: 1;
     }
@@ -831,7 +835,7 @@ body {
 
     .menu__item:hover {
         border-bottom: 2px solid #edbfff;
-        background: rgba(43, 34, 48, .9);
+        background: url('../img/menu_trans.png');
     }
 
     .menu__link {
@@ -879,7 +883,8 @@ body {
     }
 
     .smallnav__container {
-        margin-top: 82px;
+        top: 470px;
+        width: 480px;
     }
 
     .smallnav {
@@ -1185,7 +1190,8 @@ body {
     }
 
     .smallnav__container {
-        margin-top: 254px;
+        top: 450px;
+        width: 320px;
     }
 
     .smallnav {
