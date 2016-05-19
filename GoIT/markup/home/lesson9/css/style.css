@@ -14,7 +14,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext);
 
-@-moz-document url-prefix() {
+/*@-moz-document url-prefix() {
     body {
         border-top: 1px solid rgba(0, 0, 0, 0);
     }
@@ -22,7 +22,7 @@
     .container {
         border-top: 1px solid rgba(0, 0, 0, 0);
     }
-}
+}*/
 
 body {
     background: url('../img/bg.jpg') repeat-x center 0;
@@ -44,12 +44,12 @@ body {
 
 .mainheader {
     width: 100%;
+    height: 100%;
     margin-top: 63px;
 }
 
 .logo {
     float: left;
-    margin-top: 63px;
     color: #fff;
     font: 291%  'League Gothic';
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
@@ -68,7 +68,7 @@ body {
 }
 
 .menu {
-    margin-top: 72px;
+    margin-top: 9px;
     float: right;
 }
 
@@ -163,19 +163,29 @@ body {
     height: 15px;
     margin-right: 7px;
     float: left;
-    border-radius: 15px;
+    border-radius: 17px;
     background: rgba(0, 0, 0, .5);
     cursor: pointer;
     box-sizing: border-box;
 }
 
+@-moz-document url-prefix() {
+    .smallnav__button {
+        width: 13px;
+        height: 13px;
+        border: 3px solid rgba(0, 0, 0, .1);
+    }
+}
+
 .smallnav__button--active {
     border: 3px solid rgba(0, 0, 0, .7);
+    background: #fff;
     background: linear-gradient(#d4d4d4 0%, #fff 100%);
 }
 
 .smallnav__button:hover {
     border: 3px solid rgba(0, 0, 0, .7);
+    background: #fff;
     background: linear-gradient(#d4d4d4 0%, #fff 100%);
 }
 
@@ -323,6 +333,13 @@ body {
     background: #fff;
     box-shadow: 0 1px #fff;
 }
+
+@-moz-document url-prefix() {
+    .smallnav--white .smallnav__button {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #e6e6e6;
+    }
 
 .smallnav--white .smallnav__button--active {
     border-width: 2px;
