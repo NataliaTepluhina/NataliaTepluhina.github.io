@@ -14,16 +14,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext);
 
-/*@-moz-document url-prefix() {
-    body {
-        border-top: 1px solid rgba(0, 0, 0, 0);
-    }
-
-    .container {
-        border-top: 1px solid rgba(0, 0, 0, 0);
-    }
-}*/
-
 body {
     background: url('../img/bg.jpg') repeat-x center 0;
     background-position: center 0;
@@ -137,7 +127,8 @@ body {
 .slider__info {
     margin-top: 10px;
     color: #fff;
-    font: 112% 'Open Sans Light';
+    font: 112% 'Open Sans';
+    font-weight: 300;
     line-height: 136%;
     text-shadow: 0 2px 2px rgba(50, 50, 50, 1);
 }
