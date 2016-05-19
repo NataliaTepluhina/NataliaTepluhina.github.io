@@ -36,24 +36,18 @@ body {
 /*HEADER*/
 
 .mainheader {
-    width: 100%;
-    height: 100%;
+    margin-top: 63px;
 }
 
 .logo {
     float: left;
     color: #fff;
-    font: 291%  'League Gothic';
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 48px;
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
 }
 
 .logo span {
-/*    background: rgb(51, 38, 58);
-    background: -moz-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -webkit-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -o-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -ms-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: linear-gradient(0deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);*/
     background: -webkit-repeating-linear-gradient(#745083, #322539);
     color: #322539;
     text-shadow: none;
