@@ -136,7 +136,6 @@ body {
 .smallnav__container {
     position: absolute;
     top: 742px;
-    width: 960px;
     margin: 0 auto;
 }
 
@@ -567,14 +566,6 @@ body {
         line-height: 27px;
     }
 
-    .smallnav__container {
-        width: 100%;
-        margin-top: 653px;
-    }
-
-    .smallnav__container {
-        margin-top: 513px;
-    }
 
     .smallnav {
         margin-right: 102px;
