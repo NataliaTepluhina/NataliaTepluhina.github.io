@@ -541,11 +541,11 @@ body {
 
 @media (max-width: 960px) {
     .container {
-        width: 748px;
+        width: 768px;
     }
 
     .center {
-        width: 748px;
+        width: 768px;
     }
 
     .logo {
@@ -575,7 +575,7 @@ body {
 
     .slider__phone {
         margin-top: -23px;
-        margin-right: 27px;
+        margin-right: 47px;
     }
 
     .slider__text h1 {
@@ -602,15 +602,11 @@ body {
 
     .smallnav__container {
         width: 100%;
-        margin-top: 653px;
-    }
-
-    .smallnav__container {
         margin-top: 513px;
     }
 
     .smallnav {
-        margin-right: 82px;
+        margin-right: 102px;
     }
 
     .violet {
@@ -821,15 +817,15 @@ body {
     }
 
     .footer__text {
-        margin-top: 99px;
-        margin-right: 2px;
+        margin-top: 100px;
+        margin-right: 22px;
     }
 
 }
 
-/* WIDTH < 748px*/
+/* WIDTH < 768px*/
 
-@media (max-width: 748px) {
+@media (max-width: 768px) {
 
     .container {
         width: 480px;

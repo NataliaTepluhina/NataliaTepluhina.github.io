@@ -12,7 +12,10 @@
     font-style: normal;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext);
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('../fonts/OpenSansLight.ttf');
+}
 
 body {
     background: url('../img/bg.jpg') repeat-x center 0;
@@ -46,12 +49,14 @@ body {
 }
 
 .logo span {
-    background: rgb(51, 38, 58);
+/*    background: rgb(51, 38, 58);
     background: -moz-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
     background: -webkit-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
     background: -o-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
     background: -ms-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: linear-gradient(0deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
+    background: linear-gradient(0deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);*/
+    background: -webkit-repeating-linear-gradient(#745083, #322539);
+    color: #322539;
     text-shadow: none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -127,8 +132,7 @@ body {
 .slider__info {
     margin-top: 10px;
     color: #fff;
-    font: 112% 'Open Sans';
-    font-weight: 300;
+    font: 112% 'Open Sans Light';
     line-height: 136%;
     text-shadow: 0 2px 2px rgba(50, 50, 50, 1);
 }
