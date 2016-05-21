@@ -1,5 +1,4 @@
 var base = +prompt('Enter base number:');
-
 while ((isNaN(base) === true) || (base != Math.round (base)) === true)  {
     var base = prompt('Base is not a valid integer number. Please enter correct one:');
 }
@@ -8,6 +7,7 @@ var exponent = +prompt('Enter exponent:');
 while ((isNaN(exponent) === true) || (exponent != Math.round (exponent)) === true) {
     var exponent = prompt('Exponent is not a valid integer number. Please enter correct one:');
 }
+
 console.log ('Result is', pow(base, exponent) );
 
 function pow (b, e) {
