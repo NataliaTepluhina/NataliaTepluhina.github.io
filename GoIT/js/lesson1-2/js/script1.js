@@ -1,7 +1,4 @@
 var base = +prompt('Enter base number:');
-a= (isNaN(base) === true) || (base != Math.round (base));
-
-
 
 while ((isNaN(base) === true) || (base != Math.round (base)) === true)  {
     var base = prompt('Base is not a valid integer number. Please enter correct one:');
