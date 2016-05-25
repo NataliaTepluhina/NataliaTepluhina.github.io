@@ -17,27 +17,27 @@
     src: url('../fonts/opensanslight-webfont.eot');
 }
 
-body {
-    background: url('../img/bg.jpg') repeat-x center 0;
-    background-position: center 0;
-}
-
 .clearfix::after {
     display: block;
     clear: both;
     content: '';
 }
 
-.container {
+
+.mountain {
+    height: 847px;
+    margin-bottom: -63px;
+    padding-top: 63px;
+    background: url('../img/bg.jpg') 846px repeat-x;
+    background-position: top center;
+}
+
+.center {
     width: 960px;
     margin: 0 auto;
 }
 
 /*HEADER*/
-
-.mainheader {
-    margin-top: 63px;
-}
 
 .logo {
     float: left;
@@ -90,11 +90,6 @@ body {
     width: 100%;
     height: 400px;
     background: url('../img/slider.png');
-}
-
-.center {
-    width: 960px;
-    margin: 0 auto;
 }
 
 .slider__text {
@@ -163,9 +158,6 @@ body {
 }
 
 .violet {
-    position: absolute;
-    top: 847px;
-    left: 0;
     width: 100%;
     height: 342px;
     border-top: 1px solid #33253a;
@@ -245,16 +237,17 @@ body {
     text-shadow: 0 1px 10px rgba(255, 255, 255, 1);
 }
 
+.violet__link:hover {
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 1);
+}
+
 .violet-column--last .violet__link {
     margin-right: 1px;
 }
 
 .news {
-    position: absolute;
-    top: 1188px;
-    left: 0;
     width: 100%;
-    height: 606px;
+    height: 486px;
     background: #fff;
 }
 
@@ -364,12 +357,11 @@ body {
 }
 
 .news__footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 120px;
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #d8d8d8;
+    background: #fff;
 }
 
 .news__trustmarks {
@@ -397,9 +389,6 @@ body {
 }
 
 .info {
-    position: absolute;
-    top: 1795px;
-    left: 0;
     width: 100%;
     height: 400px;
     background: #ececec;
@@ -466,9 +455,6 @@ body {
 }
 
 .mainfooter {
-    position: absolute;
-    top: 2191px;
-    left: 0;
     width: 100%;
     height: 114px;
     background: url('../img/footer.jpg');
@@ -507,8 +493,9 @@ body {
 /* WIDTH < 960px*/
 
 @media (max-width: 960px) {
-    .container {
-        width: 768px;
+    .mountain {
+        height: 797px;
+        overflow: hidden;
     }
 
     .center {
@@ -516,12 +503,13 @@ body {
     }
 
     .logo {
+        margin-left: 19px;
         font-size: 291%;
     }
 
     .menu {
         margin-top: 22px;
-        margin-left: -5px;
+        margin-left: 13px;
         float: left;
     }
 
@@ -576,8 +564,8 @@ body {
         margin-right: 102px;
     }
 
+
     .violet {
-        top: 798px;
         height: 341px;
     }
 
@@ -648,8 +636,7 @@ body {
     }
 
     .news {
-        top: 1141px;
-        height: 606px;
+        height: 486px;
     }
 
     .news__blog {
@@ -736,8 +723,7 @@ body {
     }
 
     .info {
-        top: 1749px;
-        height: 395px;
+        height: 397px;
     }
 
     .info__column {
@@ -768,7 +754,6 @@ body {
     }
 
     .mainfooter {
-        top: 2145px;
         height: 201px;
         background-size: cover;
     }
@@ -784,7 +769,7 @@ body {
     }
 
     .footer__text {
-        margin-top: 99px;
+        margin-top: 100px;
         margin-right: 22px;
     }
 
@@ -794,8 +779,8 @@ body {
 
 @media (max-width: 768px) {
 
-    .container {
-        width: 480px;
+    .mountain {
+        height: 547px;
     }
 
     .center {
@@ -812,8 +797,8 @@ body {
     .menu {
         position: relative;
         width: 245px;
-        margin: 0 auto;
         margin-top: 12px;
+        margin-left: 108px;
         float: none;
         background: url('../img/menu.png');
         text-align: center;
@@ -890,7 +875,6 @@ body {
     }
 
     .violet {
-        top: 548px;
         height: 522px;
         padding-top: 75px;
     }
@@ -937,8 +921,7 @@ body {
     }
 
     .news {
-        top: 1147px;
-        height: 1020px;
+        height: 787px;
     }
 
     .news__blog {
@@ -1049,11 +1032,9 @@ body {
     }
 
     .mainfooter {
-        top: 2835px;
         height: 201px;
         background-size: cover;
     }
-
 
     .menu--footer {
         position: static;
@@ -1103,8 +1084,8 @@ body {
 
 @media (max-width: 480px) {
     
-    .container {
-        width: 320px;
+    .mountain {
+        height: 515px;
     }
 
     .center {
@@ -1197,7 +1178,6 @@ body {
     }
 
     .violet {
-        top: 516px;
         height: 529px;
         padding-top: 68px;
     }
@@ -1248,8 +1228,7 @@ body {
     }
 
     .news {
-        top: 1115px;
-        height: 1209px;
+        height: 788px;
     }
 
     .news__blog {
@@ -1357,11 +1336,6 @@ body {
     .info {
         display: none;
     }
-
-    .mainfooter {
-        top: 2324px;
-    }
-
 
     .menu--footer {
         display: none;

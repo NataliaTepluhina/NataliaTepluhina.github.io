@@ -241,6 +241,10 @@
     text-shadow: 0 1px 10px rgba(255, 255, 255, 1);
 }
 
+.violet__link:hover {
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 1);
+}
+
 .violet-column--last .violet__link {
     margin-right: 1px;
 }
