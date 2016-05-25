@@ -25,9 +25,10 @@
 
 .mountain {
     height: 847px;
+    margin-bottom: -63px;
+    padding-top: 63px;
     background: url('../img/bg.jpg') 846px repeat-x;
     background-position: top center;
-    box-sizing: border-box;
 }
 
 .center {
@@ -39,7 +40,6 @@
 
 .mainheader {
     display: block;
-    margin-top: 63px;
     width: 100%;
     height: 100%;
 }
