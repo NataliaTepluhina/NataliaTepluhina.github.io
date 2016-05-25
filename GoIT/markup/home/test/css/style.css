@@ -23,7 +23,6 @@
     content: '';
 }
 
-
 .mountain {
     height: 847px;
     padding-top: 63px;
@@ -38,6 +37,10 @@
 }
 
 /*HEADER*/
+
+header {
+    height: 100%;
+}
 
 .logo {
     float: left;
