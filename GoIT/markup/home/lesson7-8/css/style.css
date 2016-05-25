@@ -60,6 +60,10 @@
     float: right;
 }
 
+.menu--replaced {
+    display: none;
+}
+
 .menu__item {
     float: left;
 }
@@ -813,16 +817,27 @@
     }
 
     .menu {
+        display: none;
         position: relative;
         width: 245px;
-        margin-top: 12px;
-        margin-left: 108px;
+        top: -28px;
+        left: -14px;
         float: none;
         border: 1px solid #000;
-        border-radius: 8px;
+        border-radius: 0 0 8px 8px;
         background: rgba(69, 55, 75, .9);
         text-align: center;
         z-index: 1;
+    }
+
+    .menu--replaced {
+        display: block;
+        position: static;
+        margin-top: 12px;
+        margin-left: 108px;
+        border: 0;
+        background: none;
+        text-align: center;
     }
 
     .menu__item {
@@ -840,6 +855,20 @@
     .menu__item:hover {
         border-bottom: 2px solid #edbfff;
         background: rgba(43, 34, 48, .9);
+    }
+
+    .menu__item--replaced {
+        border: 0;
+    }
+
+    .menu__item--replaced:hover {
+        width: 247px;
+        border: 1px solid #000;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .menu__item--replaced:hover .menu {
+        display: block;
     }
 
     .menu__link {
@@ -887,7 +916,7 @@
     }
 
     .smallnav__container {
-        margin-top: 82px;
+        margin-top: 294px;
     }
 
     .smallnav {
@@ -1120,37 +1149,9 @@
     }
 
     .menu {
-        width: 245px;
-        height: 30px;
+        top: -6px;
+        left: -1px;
         margin: 0 auto;
-        margin-top: 29px;
-        padding-right: 17px;
-        float: none;
-        border: 0;
-        background: none;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .menu__item {
-        float: none;
-        border: 0;
-        background: none;
-    }
-
-    .menu__item:hover {
-        border: 0;
-        background: none;
-    }
-
-    .menu__link {
-        margin-right: 0;
-        margin-left: 0;
-        line-height: 20px;
-    }
-
-    .menu__link--selected {
-        line-height: 20px;
     }
 
     .slider {
