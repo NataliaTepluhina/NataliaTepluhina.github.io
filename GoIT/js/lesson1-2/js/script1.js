@@ -1,10 +1,10 @@
 var base = +prompt('Enter base number:');
-while ((isNaN(base) === true) || (base != Math.round (base)) === true)  {
+while ((isNaN(base)) || (base != Math.round (base)))  {
     var base = prompt('Base is not a valid integer number. Please enter correct one:');
 }
 
 var exponent = +prompt('Enter exponent:');
-while ((isNaN(exponent) === true) || (exponent != Math.round (exponent)) === true) {
+while ((isNaN(exponent)) || (exponent != Math.round (exponent))) {
     var exponent = prompt('Exponent is not a valid integer number. Please enter correct one:');
 }
 

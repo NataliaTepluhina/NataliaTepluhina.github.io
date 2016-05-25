@@ -1,0 +1,61 @@
+* {
+    font-family: Tahoma;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.timer {
+    width: 366px;
+    margin: 100px 0 30px 100px;
+    padding: 20px;
+    float: left;
+    border: 3px solid #000;
+    border-radius: 20px;
+    font-size: 80px;
+}
+
+.dots {
+    float: left;
+}
+
+.hours {
+    float: left;
+}
+
+.minutes {
+    float: left;
+}
+
+.seconds {
+    float: left;
+}
+
+.ms {
+    margin-left: 245px;
+    font-size: 30px;
+}
+
+.btn-success {
+    width: 80px;
+    margin-left: 120px;
+}
+
+.btn-danger {
+    width: 80px;
+    margin-left: 30px;
+}
+
+.btn-primary {
+    width: 80px;
+    margin-left: 30px;
+}
+
+ol {
+    margin-top: 25px;
+    margin-left: 101px;
+    font-size: 19px;
+}
