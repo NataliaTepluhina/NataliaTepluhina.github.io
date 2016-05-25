@@ -12,7 +12,10 @@
     font-style: normal;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,latin-ext);
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('../fonts/OpenSansLight.ttf');
+}
 
 .clearfix::after {
     display: block;
@@ -44,12 +47,8 @@
 }
 
 .logo span {
-    background: rgb(51, 38, 58);
-    background: -moz-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -webkit-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -o-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: -ms-linear-gradient(270deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
-    background: linear-gradient(0deg, rgb(51, 38, 58) 33%, rgb(116, 80, 131) 93%);
+    background: -webkit-repeating-linear-gradient(#745083, #322539);
+    color: #322539;
     text-shadow: none;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -151,13 +150,23 @@
     box-sizing: border-box;
 }
 
+@-moz-document url-prefix() {
+    .smallnav__button {
+        width: 13px;
+        height: 13px;
+        border: 3px solid rgba(0, 0, 0, .1);
+    }
+}
+
 .smallnav__button--active {
     border: 3px solid rgba(0, 0, 0, .7);
+    background: #fff;
     background: linear-gradient(#d4d4d4 0%, #fff 100%);
 }
 
 .smallnav__button:hover {
     border: 3px solid rgba(0, 0, 0, .7);
+    background: #fff;
     background: linear-gradient(#d4d4d4 0%, #fff 100%);
 }
 
@@ -298,6 +307,14 @@
     border: 1px solid #e6e6e6;
     background: #fff;
     box-shadow: 0 1px #fff;
+}
+
+@-moz-document url-prefix() {
+    .smallnav--white .smallnav__button {
+        width: 14px;
+        height: 14px;
+        border: 2px solid #e6e6e6;
+    }
 }
 
 .smallnav--white .smallnav__button--active {
@@ -575,7 +592,7 @@
     }
 
     .smallnav {
-        margin-right: 137px;
+        margin-right: 137px;;
     }
 
     .violet {
@@ -811,8 +828,8 @@
     .menu {
         position: relative;
         width: 245px;
-        margin-top: 12px;
         margin-left: 108px;
+        margin-top: 12px;
         float: none;
         border: 1px solid #000;
         border-radius: 8px;
@@ -1051,6 +1068,7 @@
         background-size: cover;
     }
 
+
     .menu--footer {
         position: static;
         width: 100%;
@@ -1098,7 +1116,7 @@
 /* WIDTH < 480px*/
 
 @media (max-width: 480px) {
-
+    
     .mountain {
         height: 515px;
     }
