@@ -755,7 +755,7 @@
 
     .mainfooter {
         height: 201px;
-        background: url('..img/footer-2.jpg');
+        background: url('../img/footer-2.jpg');
         background-size: cover;
     }
 
