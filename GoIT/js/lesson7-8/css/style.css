@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(77, 180, 126);
+    background: -moz-linear-gradient(30deg, rgb(77, 180, 126) 30%, rgb(153, 215, 179) 70%);
+    background: -webkit-linear-gradient(30deg, rgb(77, 180, 126) 30%, rgb(153, 215, 179) 70%);
+    background: -o-linear-gradient(30deg, rgb(77, 180, 126) 30%, rgb(153, 215, 179) 70%);
+    background: -ms-linear-gradient(30deg, rgb(77, 180, 126) 30%, rgb(153, 215, 179) 70%);
+    background: linear-gradient(90deg, rgb(77, 180, 126) 30%, rgb(153, 215, 179) 70%);
+    background-size: cover;
+}
+
+.tabs {
+    padding: 25px;
+    font: 18px Tahoma;
+}
+
+.tabs__menu {
+    list-style: none;
+}
+
+.tabs__menu li {
+    display: inline-block;
+}
+
+.tabs__menu .active {
+    background: #fff;
+    color: #278969;
+}
+
+.tabs__menu a {
+    padding: 5px;
+    border: transparent;
+    border-radius: 6px 6px 0 0;
+    background: #278969;
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.tabs__content {
+    width: 70%;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+    border: transparent;
+    border-radius: 0 6px 6px;
+    background: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.forms {
+    width: 580px;
+    height: 300px;
+    margin-left: 25px;
+    border: transparent;
+    border-radius: 6px;
+    background: #fff;
+    font: 18px Tahoma;
+    box-sizing: border-box;
+}
+
+.forms span {
+    display: inline-block;
+    width: 88px;
+    margin: 10px;
+
+}
+
+.forms em {
+    display: none;
+    padding: 3px 10px;
+    font-size: 16px;
+    font-style: normal;
+    border: 1px solid #278969;
+    border-radius: 5px;
+    color: #278969;
+    -webkit-box-shadow: 0 0 3px 0 rgba(39, 137, 105, .75);
+    -moz-box-shadow: 0 0 3px 0 rgba(39, 137, 105, .75);
+    box-shadow: 0 0 3px 0 rgba(39, 137, 105, .75);
+}
+
+.forms__help {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #278969;
+    font: 16px Tahoma;
+}
