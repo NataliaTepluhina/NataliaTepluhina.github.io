@@ -1,8 +1,79 @@
+.container {
+    width: 860px;
+    height: 420px;
+    padding: 50px 20px;
+}
+
+.jcarousel-wrapper {
+    float: left;
+    width: 760px;
+    margin: 8px;
+    padding: 11px;
+    border: 1px solid #999;
+    border-radius: 8px;
+    background: #d4d4d4;
+}
+
 .jcarousel {
     position: relative;
     width: 760px;
     overflow: hidden;
+}
 
+.jcarousel-item {
+    box-sizing: border-box;
+    border-left: 1px solid #d4d4d4;
+    border-right: 1px solid #d4d4d4;
+}
+
+.jcarousel-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: 190px;
+    float: left;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background-color: #d4d4d4;
+    color: #556667;
+    font: 30px Arial;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.jcarousel-prev:hover {
+    border: 1px solid #999;
+}
+
+.jcarousel-prev:active {
+    background: #556667;
+    color: #d4d4d4;
+}
+
+.jcarousel-next {
+    width: 30px;
+    height: 30px;
+    margin-top: 190px;
+    float: left;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background-color: #d4d4d4;
+    color: #556667;
+    font: 30px Arial;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.jcarousel-next:hover {
+    border: 1px solid #999;
+}
+
+.jcarousel-next:active {
+    background: #556667;
+    color: #d4d4d4;
 }
 
 .jcarousel ul {
@@ -16,4 +87,36 @@
 
 .jcarousel li {
     float: left;
+}
+
+.jcarousel-pagination {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.jcarousel-pagination a {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-left: 5px;
+    color: #d4d4d4;
+    background: #d4d4d4;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.jcarousel-pagination a:hover {
+    border: 1px solid #556667;
+}
+
+.jcarousel-pagination a:active {
+    background: #556667;
+    color: #556667;
+}
+
+.jcarousel-pagination a.active {
+    background: #556667;
+    color: #556667;
 }
