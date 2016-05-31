@@ -1,11 +1,14 @@
 .jcarousel {
     position: relative;
+    width: 760px;
     overflow: hidden;
+
 }
 
 .jcarousel ul {
-    width: 20000em;
     position: relative;
+    width: 20000em;
+
     list-style: none;
     margin: 0;
     padding: 0;

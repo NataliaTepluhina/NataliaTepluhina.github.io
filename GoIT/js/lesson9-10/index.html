@@ -4,17 +4,24 @@
     <title></title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.jcarousel.js"></script>
+    <script src="js/jquery.jcarousel-control.js"></script>
+    <script src="js/jquery.jcarousel-pagination.js"></script>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="jcarousel">
-        <ul>
-            <li><img src="img/wow1.jpg"></li>
-            <li><img src="img/wow2.jpg"></li>
-            <li><img src="img/wow3.jpg"></li>
-            <li><img src="img/wow4.jpg"></li>
-        </ul>
+    <div class="jcarousel-wrapper">
+        <div class="jcarousel">
+            <ul>
+                <li><img class="jcarousel-item" src="img/wow1.jpg"></li>
+                <li><img class="jcarousel-item" src="img/wow2.jpg"></li>
+                <li><img class="jcarousel-item" src="img/wow3.jpg"></li>
+                <li><img class="jcarousel-item" src="img/wow4.jpg"></li>
+            </ul>
+        </div>
+         <div class="jcarousel-pagination"></div>
+        <a class="jcarousel-prev" href="#">Prev</a>
+        <a class="jcarousel-next" href="#">Next</a>
     </div>
 </body>
 </html>
