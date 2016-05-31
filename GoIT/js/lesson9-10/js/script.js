@@ -22,7 +22,7 @@ $(function() {
 
     $('.jcarousel-pagination').jcarouselPagination({
         item: function(page) {
-                return '<a href="#' + (page-1) + '">' + '</a>';
+                return '<a href="#' + (page) + '">' + '</a>';
             },
     });
 
