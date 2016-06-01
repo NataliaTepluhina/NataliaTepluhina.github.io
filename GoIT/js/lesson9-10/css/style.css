@@ -1,10 +1,10 @@
-.container {
+.jcarousel-wrapper {
     width: 860px;
     height: 420px;
     padding: 50px 20px;
 }
 
-.jcarousel-wrapper {
+.container {
     width: 760px;
     margin: 8px;
     padding: 11px;
