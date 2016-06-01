@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'League Gothic Regular';
+    font-family: 'League Gothic';
     src: url('../fonts/leaguegothic-regular-webfont.eot');
     src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/leaguegothic-regular-webfont.woff2') format('woff2'),
@@ -48,7 +48,7 @@
 .logo {
     float: left;
     color: #fff;
-    font: 291% 'League Gothic Regular', sans-serif;
+    font: 291% 'League Gothic', sans-serif;
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
 }
 
