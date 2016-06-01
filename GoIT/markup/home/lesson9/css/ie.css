@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'League Gothic';
-    src: url('../fonts/leaguegothic-regular-webfont.eot');
-    src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/leaguegothic-regular-webfont.woff2') format('woff2'),
-         url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+    font-family: 'LeagueGothic';
+    src: url('../fonts/leaguegothic-webfont.eot');
+    src: url('../fonts/leaguegothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-webfont.woff2') format('woff2'),
+         url('../fonts/leaguegothic-webfont.woff') format('woff'),
          url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -48,7 +48,7 @@
 .logo {
     float: left;
     color: #fff;
-    font: 291% 'League Gothic', sans-serif;
+    font: 291% 'LeagueGothic', sans-serif;
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
 }
 
