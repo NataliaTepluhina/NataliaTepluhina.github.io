@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'League Gothic';
-    src: url('/NataliaTepluhina.github.io/GoIT/markup/home/lesson9/fonts/leaguegothic-webfont.eot');
-/*    src: url('../fonts/leaguegothic-webfont.eot');
+    src: url('../fonts/leaguegothic-webfont.eot');
+    src: url('../fonts/leaguegothic-webfont.eot');
     src: url('../fonts/leaguegothic-webfont.eot?#iefix') format ('embedded-opentype'),
          url('../fonts/leaguegothic-webfont.woff2') format ('woff2'),
          url('../fonts/leaguegothic-webfont.woff') format ('woff'),
-         url('../fonts/leaguegothic-regular-webfont.ttf') format ('truetype');*/
+         url('../fonts/leaguegothic-regular-webfont.ttf') format ('truetype');
     font-weight: normal;
     font-style: normal;
 }
