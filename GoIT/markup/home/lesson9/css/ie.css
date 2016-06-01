@@ -1,20 +1,22 @@
 @font-face {
     font-family: 'League Gothic';
-    src: url('../fonts/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans Extrabold';
-    src: url('../fonts/opensans-extrabold-webfont.eot');
+    src: url('../fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans Light';
-    src: url('../fonts/opensanslight-webfont.eot');
+    src: url('../fonts/opensanslight-webfont.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .clearfix::after {
@@ -42,7 +44,7 @@
 .logo {
     float: left;
     color: #fff;
-    font: 291% 'League Gothic';
+    font: 291% 'League Gothic', sans-serif;
     text-shadow: 0 3px 3px rgba(150, 150, 150, 1);
 }
 
