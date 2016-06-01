@@ -25,7 +25,9 @@ $(window).load(function(){
         $('.jcarousel-pagination').jcarouselPagination({
             item: function(page) {
                     return '<a href="#' + (page) + '">' + '</a>';
-                },
+            },
         });
+
+        $('select').ikSelect();
     });
 });

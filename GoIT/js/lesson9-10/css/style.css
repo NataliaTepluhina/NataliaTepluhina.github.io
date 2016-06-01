@@ -1,4 +1,13 @@
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+/*Carousel section*/
+
 .jcarousel-wrapper {
+    float: left;
     width: 860px;
     height: 420px;
     padding: 50px 20px;
@@ -114,4 +123,73 @@
     border: 3px solid #d4d4d4;
     background: #556667;
     color: #556667;
+}
+
+/*Select box*/
+
+.boxes {
+    float: left;
+    padding: 50px 20px;
+}
+
+.ik_select_link {
+    width: 180px;
+    height: 25px;
+    border: 1px solid transparent;
+    border-radius: 8px 0;
+    background: rgb(212, 212, 212);
+    background: -moz-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -webkit-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -o-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -ms-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: linear-gradient(120deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+}
+
+
+.ik_select_link_focus {
+        /* Focused state of the fake select */
+}
+
+.ik_select_link_text {
+    display:block;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    background-image: url('../img/dropdown-arrow.png');
+    background-repeat: no-repeat;
+}
+
+
+
+.ik_select_dropdown {
+    top: -2px;
+    left: -5px;
+}
+
+.ik_select_list {
+
+}
+
+.ik_select_option {
+    list-style: none;
+}
+
+.ik_select_option_label {
+    /* Option label */
+}
+
+.ik_select_hover {
+    /* The hovered state of an option */
+}
+                
+.ik_select_active {
+    /* The active state of an option */
+}
+
+.ik_select_filter_wrap {
+    /* Wrapper for the filter input */
+}
+        
+.ik_select_filter {
+    /* Filter input */
 }
