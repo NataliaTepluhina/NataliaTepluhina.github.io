@@ -818,6 +818,7 @@
         top: -28px;
         left: -13px;
         float: none;
+        border-right: 1px solid #000;
         background: url('../img/menu.png');
         text-align: center;
         z-index: 1;
