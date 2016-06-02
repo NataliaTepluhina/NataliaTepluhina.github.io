@@ -816,7 +816,7 @@
         position: relative;
         width: 245px;
         top: -28px;
-        left: -14px;
+        left: -13px;
         float: none;
         background: url('../img/menu.png');
         text-align: center;
@@ -836,7 +836,7 @@
     .menu__item {
         height: 42px;
         float: none;
-        border-bottom: 2px solid #36283e;
+        border-top: 2px solid #36283e;
         box-sizing: border-box;
     }
 
