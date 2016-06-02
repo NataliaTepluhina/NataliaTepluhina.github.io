@@ -819,6 +819,7 @@
         left: -14px;
         float: none;
         background: url('../img/menu.png');
+        background-position: left -40px;
         text-align: center;
         z-index: 1;
     }
@@ -855,7 +856,6 @@
 
     .menu__item--replaced:hover {
         width: 247px;
-        border: 1px solid #000;
     }
 
     .menu__item--replaced:hover .menu {
