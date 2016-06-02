@@ -29,5 +29,10 @@ $(window).load(function(){
         });
 
         $('select').ikSelect();
+
+        $('.jquery__box').simpleSwitch();
+
+        $('#disabled1').parent().addClass('disabled');
+
     });
 });

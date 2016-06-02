@@ -7,10 +7,10 @@
 /*Carousel section*/
 
 .jcarousel-wrapper {
-    float: left;
     width: 860px;
     height: 420px;
     padding: 50px 20px;
+    float: left;
 }
 
 .container {
@@ -30,8 +30,8 @@
 }
 
 .jcarousel-item {
-    border-left: 1px solid #d4d4d4;
     border-right: 1px solid #d4d4d4;
+    border-left: 1px solid #d4d4d4;
     box-sizing: border-box;
 }
 
@@ -125,7 +125,7 @@
     color: #556667;
 }
 
-/*Select box*/
+/*Select*/
 
 .boxes {
     float: left;
@@ -145,11 +145,6 @@
     cursor: pointer;
 }
 
-
-.ik_select_link_focus {
-    
-}
-
 .ik_select_link_text {
     display: block;
     padding-left: 30px;
@@ -162,7 +157,6 @@
     background-position: 157px 7px;
     font: 18px Tahoma;
 }
-
 
 
 .ik_select_dropdown {
@@ -187,33 +181,158 @@
     height: 25px;
     margin-left: -40px;
     padding-left: 30px;
-    list-style: none;
     border-radius: 8px 0;
     color: #556667;
     font: 18px Tahoma;
-
-}
-
-.ik_select_option_label {
-    /* Option label */
+    list-style: none;
 }
 
 .ik_select_hover {
-    color: #fff;
     border-bottom: 1px solid #fff;
+    color: #fff;
     box-sizing: border-box;
 }
-                
+
 .ik_select_active {
+    border-radius: 8px 0;
     background: #556667;
     color: #fff;
-    border-radius: 8px 0;
 }
 
-.ik_select_filter_wrap {
-    /* Wrapper for the filter input */
+/*Checkboxes*/
+
+.css__check {
+    margin-top: 100px;
+    float: left;
+    font: 25px Tahoma;
+    text-align: center;
 }
-        
-.ik_select_filter {
-    /* Filter input */
+
+.lbl {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 20px;
+    margin: 30px;
+    transition: all .3s ease;
+    border-radius: 100px;
+    background: #556667;
+    cursor: pointer;
+}
+
+.lbl span {
+    margin-left: 55px;
+    font-size: 18px;
+    vertical-align: top;
+}
+
+.lbl::after {
+    display: block;
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    width: 26px;
+    height: 26px;
+    transition: all .3s ease;
+    border-radius: 100px;
+    background: #d4d4d4;
+    box-shadow: 0 3 3 rgba(0, 0, 0, .05);
+    content: '';
+}
+
+.cbx:checked ~ label { 
+    background: #936ea7;
+}
+
+.cbx:checked ~ label:after {
+    left: 20px;
+    background: #d3a0f0;
+}
+
+.cbx:disabled ~ label {
+    background: #d5d5d5;
+    pointer-events: none;
+}
+
+.cbx:disabled ~ label:after {
+    background: #bcbdbc;
+}
+
+.hidden {
+    display: none;
+}
+
+.check__wrapper {
+    margin: 18px;
+}
+
+.jquery__check {
+    margin-top: 100px;
+    margin-left: 50px;
+    float: left;
+    font: 25px Tahoma;
+}
+
+.jquery__check span {
+    font-size: 18px;
+}
+
+.simple-switch-outter {
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 20px;
+    transition: all .3s ease;
+    border-radius: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: middle;
+    box-sizing: content-box;
+    background-clip: content-box;
+}
+
+.simple-switch-outter .simple-switch {
+    display: none;
+}
+
+.simple-switch-outter .simple-switch-circle {
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    width: 26px;
+    height: 26px;
+    transition: all .3s ease;
+    border-radius: 100px;
+    background: #d4d4d4;
+    box-shadow: 0 3 3 rgba(0, 0, 0, .5);
+    content: '';
+}
+
+.simple-switch-outter.unchecked {
+    background-color: #556667;
+}
+
+.simple-switch-outter.unchecked .simple-switch-circle {
+    left: 0;
+    transition: background-color .4s, left .3s;
+}
+
+.simple-switch-outter.checked {
+    transition: background-color .4s;
+    background-color: #936ea7;
+}
+
+.simple-switch-outter.checked .simple-switch-circle {
+    left: 20px;
+    transition: background-color .4s, left .3s;
+    background-color: #d3a0f0;
+}
+
+.simple-switch-outter.disabled {
+    background: #d5d5d5;
+    cursor: default;
+}
+
+.simple-switch-outter.disabled .simple-switch-circle {
+    background: #bcbdbc;
 }
