@@ -4,11 +4,102 @@
     content: '';
 }
 
+/*MENU*/
+
+nav {
+    background: rgb(212, 212, 212);
+    background: -moz-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -webkit-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -o-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -ms-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: linear-gradient(120deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.submenu {
+    background-color: #d4d4d4;
+}
+
+nav li ul {    
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 200px;
+}
+
+nav li li {
+    position: relative;
+    margin: 0;
+    display: block;
+}
+
+nav li li ul {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    margin: 0 12px;
+    padding: 0 12px;
+    color: #000;
+    font: 18px Tahoma;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus {
+    color: #fff;
+}
+
+nav li li a {
+    width: 180px;
+    border-bottom: solid 1px rgb(85, 102, 103);
+    margin: 0 10px;
+    padding: 0;
+}
+
+nav li li:last-child a {
+    border-bottom: none;
+}
+
+nav li.dropdown > a {
+    background-image:url('../img/arrow-down.png');
+    background-position:right 20px;
+    background-repeat:no-repeat;
+}
+
+nav li.dropdown_2 > a {
+    background-image:url('../img/arrow-right.png');
+    background-position:right 20px;
+    background-repeat:no-repeat;
+}
+
+ul.submenu {
+    display: none;
+}
+
 /*Carousel section*/
 
 .jcarousel-wrapper {
     width: 860px;
     height: 420px;
+    margin-top: 100px;
     padding: 50px 20px;
     float: left;
 }
@@ -128,8 +219,9 @@
 /*Select*/
 
 .boxes {
-    float: left;
+    margin-top: 100px;
     padding: 58px 50px;
+    float: left;
 }
 
 .ik_select_link {
@@ -241,12 +333,12 @@
 }
 
 .cbx:checked ~ label { 
-    background: #936ea7;
+    background: #ac98ac;
 }
 
 .cbx:checked ~ label:after {
     left: 20px;
-    background: #d3a0f0;
+    background: #d8bfd8;
 }
 
 .cbx:disabled ~ label {
@@ -319,13 +411,13 @@
 
 .simple-switch-outter.checked {
     transition: background-color .4s;
-    background-color: #936ea7;
+    background-color: #ac98ac;
 }
 
 .simple-switch-outter.checked .simple-switch-circle {
     left: 20px;
     transition: background-color .4s, left .3s;
-    background-color: #d3a0f0;
+    background-color: #d8bfd8;
 }
 
 .simple-switch-outter.disabled {
