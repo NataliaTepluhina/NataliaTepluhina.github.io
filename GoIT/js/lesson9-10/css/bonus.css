@@ -1,0 +1,86 @@
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+nav {
+    background: rgb(212, 212, 212);
+    background: -moz-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -webkit-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -o-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: -ms-linear-gradient(30deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+    background: linear-gradient(120deg, rgb(212, 212, 212) 30%, rgb(85, 102, 103) 70%);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+nav li ul {    
+    position: absolute;
+    left: 0;
+    top: 40px;
+    width: 200px;
+}
+
+nav li li {
+    position: relative;
+    margin: 0;
+    display: block;
+}
+
+nav li li ul {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    margin: 0 12px;
+    padding: 0 12px;
+    color: #000;
+    font: 18px Tahoma;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:active,
+nav a:focus {
+    color: #fff;
+}
+
+nav li li a {
+    width: 180px;
+    border-bottom: solid 1px rgb(85, 102, 103);
+    margin: 0 10px;
+    padding: 0;
+}
+
+nav li li:last-child a {
+    border-bottom: none;
+}
+
+nav li.dropdown > a {
+    background-image: url('../img/arrow-down.png');
+    background-position: right 20px;
+    background-repeat: no-repeat;
+}
+
+.submenu {
+    height: 0;
+    transition: height .3s ease;
+    background-color: #d4d4d4;
+    overflow: hidden;
+}
