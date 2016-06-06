@@ -29,7 +29,7 @@ var test = {
 };
 
 test.insert ('h1', 'body', 0);
-test.addClass ('h1', 0, 'text-center');
+test.addClass ('h1', 0, 'text-left');
 test.content ('h1', 0, 'Тест по программированию');
 test.insert ('ol', 'body', 0);
 
@@ -54,5 +54,5 @@ test.insert ('button', 'body', 0);
 test.setAttr ('button',0, 'type', 'submit');
 test.addClass ('button', 0, 'btn');
 test.addClass ('button', 0, 'btn-primary');
-test.addClass ('button', 0, 'center-block');
+test.addClass ('button', 0, 'left-block');
 test.content ('button', 0, 'Проверить мои результаты');

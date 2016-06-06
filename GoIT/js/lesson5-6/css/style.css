@@ -35,6 +35,7 @@
 }
 
 .ms {
+    float: left;
     margin-left: 245px;
     font-size: 30px;
 }
