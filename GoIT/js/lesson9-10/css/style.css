@@ -107,7 +107,7 @@ ul.submenu {
 .container {
     width: 760px;
     margin: 8px;
-/*    padding: 11px;*/
+    padding: 11px;
     float: left;
     border: 1px solid #999;
     border-radius: 8px;
