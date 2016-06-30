@@ -11,7 +11,7 @@
     order: 10;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 40px) {
     .nav {
         display: none;
         position: absolute;
@@ -65,7 +65,7 @@
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 579px) {
+@media screen and (min-width: 408px) and (max-width: 579px) {
     body {
         font-size: 14px;
     }
