@@ -1,3 +1,6 @@
+var gameFlag = 'started';
+
+
 // Enemies our player must avoid
 var Enemy = function(startX, startY, speed) {
     // Variables applied to each of our instances go here,
@@ -37,6 +40,7 @@ Enemy.prototype = {
 
             if (player.x > enemyLeftX && player.x < enemyRightX && player.y > enemyTopY && player.y < enemyBottomY) {
                 player.resetPosition();
+                player.level = 1;
             }
 
     },
@@ -70,12 +74,13 @@ Enemy.prototype = {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var startX = 205;
-var startY = 460;
 
-var Player = function (x, y, dt){
-    this.x = startX;
-    this.y = startY;
+
+var Player = function (dt){
+    this.startX = 205;
+    this.startY = 460;
+    this.x = this.startX;
+    this.y = this.startY;
     this.sprite = 'images/enemy-bug_right.png';
     this.status = 'stop';
     this.level = 1;
@@ -141,10 +146,9 @@ Player.prototype = {
 
         //Move player back to its initial position after collision with enemy
         resetPosition: function () {
-            this.x = startX;
-            this.y = startY;
+            this.x = this.startX;
+            this.y = this.startY;
             this.sprite = 'images/enemy-bug_right.png';
-            this.level = 1;
             key.status = "onground";
         },
 
@@ -219,6 +223,10 @@ Stone.prototype = {
         }
     },
 
+    reset: function () {
+        this.x = 101*(Math.floor(Math.random()*7));
+    },
+
     render: function () {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
@@ -236,17 +244,7 @@ var Key = function(y) {
 
 Key.prototype = {
     update: function(dt) {
-        this.checkStatus();
         this.checkCollisions();
-    },
-
-    checkStatus: function() {
-        if (this.status === "picked") {
-            this.renderStatus = "no";
-        } 
-        else if (this.status === "onground") {
-            this.renderStatus = "yes";
-        }
     },
 
     checkCollisions: function () {
@@ -260,8 +258,12 @@ Key.prototype = {
         }
     },
 
+    reset: function () {
+        this.x = 101*(Math.floor(Math.random()*5) + 1);
+    },
+
     render: function() {
-        if (this.renderStatus === "yes") {
+        if (this.status === "onground") {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         }
     }
@@ -279,20 +281,58 @@ Door.prototype = {
     },
 
     checkCollisions: function () {
-        var doorLeftX = this.x - 60;
-        var doorRightX = this.x + 60;
-        var doorTopY = this.y - 20;
-        var doorBottomY = this.y + 120;
-        if (key.status === 'picked' && player.x > doorLeftX && player.x < doorRightX &&
+        var doorLeftX = this.x - 10;
+        var doorRightX = this.x + 10;
+        var doorTopY = this.y - 10;
+        var doorBottomY = this.y + 10;
+        if (player.level < 3 && key.status === 'picked' && player.x > doorLeftX && player.x < doorRightX &&
             player.y > doorTopY && player.y < doorBottomY) {
             key.status = 'onground';
             player.resetPosition();
-            player.level += 1;
+            player.level++;
+            for (var i = 0; i < allStones.length; i++) {
+                allStones[i].reset();
+            }
+            key.reset();
         }
     },
 
     render: function () {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        if (player.level < 3) {
+            ctx.drawImage(Resources.get(this.sprite), this.x, this.y);            
+        }
+
+    }
+
+};
+
+var Princess = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/bug_princess.png';
+};
+
+Princess.prototype = {
+    update: function (dt) {
+        this.checkCollisions();
+    },
+
+    checkCollisions: function () {
+        var princessLeftX = this.x - 90;
+        var princessRightX = this.x + 80;
+        var princessTopY = this.y - 80;
+        var princessBottomY = this.y + 80;
+        if (key.status === 'picked' && player.x > princessLeftX && player.x < princessRightX &&
+            player.y > princessTopY && player.y < princessBottomY) {
+            gameFlag = 'end';
+        }
+    },
+
+    render: function () {
+        if (player.level === 3) {
+            ctx.drawImage(Resources.get(this.sprite), this.x, this.y);            
+        }
+
     }
 
 };
@@ -311,6 +351,7 @@ player = new Player();
 var allStones = [new Stone (60), new Stone (230), new Stone (310)];
 var key = new Key (140);
 var door = new Door (505, 50);
+var princess = new Princess (606, 50);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

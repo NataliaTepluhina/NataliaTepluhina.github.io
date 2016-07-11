@@ -39,24 +39,44 @@ var Engine = (function(global) {
          * would be the same for everyone (regardless of how fast their
          * computer is) - hurray time!
          */
-        var now = Date.now(),
-            dt = (now - lastTime) / 1000.0;
+        if (gameFlag ==='started') {
+            var now = Date.now(),
+                dt = (now - lastTime) / 1000.0;
 
-        /* Call our update/render functions, pass along the time delta to
-         * our update function since it may be used for smooth animation.
-         */
-        update(dt);
-        render();
+            /* Call our update/render functions, pass along the time delta to
+             * our update function since it may be used for smooth animation.
+             */
+            update(dt);
+            render();
 
-        /* Set our lastTime variable which is used to determine the time delta
-         * for the next time this function is called.
-         */
-        lastTime = now;
+            /* Set our lastTime variable which is used to determine the time delta
+             * for the next time this function is called.
+             */
+            lastTime = now;
+        }
+        else if (gameFlag === 'end') {
+            endGame();
+        }
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
+    }
+
+    //This function gets executed once you win the game
+    function endGame () {
+
+        ctx.fillStyle = 'red';
+        ctx.fillRect(0, 240 ,canvas.width,100);
+        ctx.font = '25pt Arial Black';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'white';
+        ctx.fillText('YOU WIN!', canvas.width/2, 280);
+        ctx.fillText('Refresh page to start a new game', canvas.width/2, 320);
+        ctx.strokeStyle = 'black';
+        ctx.strokeText('YOU WIN!', canvas.width/2, 280);
+        ctx.strokeText('Refresh page to start a new game', canvas.width/2, 320);
     }
 
     /* This function does some initial setup that should only occur once,
@@ -100,6 +120,7 @@ var Engine = (function(global) {
         player.update(dt);
         key.update(dt);
         door.update(dt);
+        princess.update(dt);
 
 
     }
@@ -163,9 +184,7 @@ var Engine = (function(global) {
         door.render();
         player.render();
         key.render();
-
-
-
+        princess.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -173,7 +192,7 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -194,7 +213,8 @@ var Engine = (function(global) {
         'images/char-pink-girl.png',
         'images/Rock.png',
         'images/Key.png',
-        'images/Selector.png'
+        'images/Selector.png',
+        'images/bug_princess.png'
 
     ]);
     Resources.onReady(init);
