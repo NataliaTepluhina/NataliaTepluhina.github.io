@@ -77,7 +77,6 @@ var Player = function (x, y, dt){
     this.x = startX;
     this.y = startY;
     this.sprite = 'images/enemy-bug_right.png';
-    this.keyStatus = false;
     this.status = 'stop';
     this.level = 1;
 };
@@ -145,7 +144,6 @@ Player.prototype = {
             this.x = startX;
             this.y = startY;
             this.sprite = 'images/enemy-bug_right.png';
-            this.keyStatus = false;
             this.level = 1;
             key.status = "onground";
         },
@@ -174,10 +172,10 @@ Stone.prototype = {
     },
 
     checkCollisions: function () {
-        stoneLeftX = this.x - 90;
-        stoneRightX = this.x + 90;
-        stoneTopY = this.y;
-        stoneBottomY = this.y + 140;
+        var stoneLeftX = this.x - 90;
+        var stoneRightX = this.x + 90;
+        var stoneTopY = this.y;
+        var stoneBottomY = this.y + 140;
         if (player.x > stoneLeftX && player.x < stoneRightX &&
             player.y > stoneTopY && player.y < stoneBottomY) {
             switch (player.status) {
@@ -237,30 +235,27 @@ var Key = function(y) {
 };
 
 Key.prototype = {
-    update: function() {
+    update: function(dt) {
         this.checkStatus();
         this.checkCollisions();
     },
 
     checkStatus: function() {
         if (this.status === "picked") {
-            player.keyStatus = 1;
             this.renderStatus = "no";
         } 
         else if (this.status === "onground") {
-            player.keyStatus = 0;
             this.renderStatus = "yes";
         }
     },
 
     checkCollisions: function () {
-        keyLeftX = this.x - 60;
-        keyRightX = this.x + 60;
-        keyTopY = this.y;
-        keyBottomY = this.y + 120;
+        var keyLeftX = this.x - 60;
+        var keyRightX = this.x + 60;
+        var keyTopY = this.y;
+        var keyBottomY = this.y + 120;
         if (player.x > keyLeftX && player.x < keyRightX &&
             player.y > keyTopY && player.y < keyBottomY) {
-            player.keyStatus = true;
             this.status = 'picked';
         }
     },
@@ -270,6 +265,36 @@ Key.prototype = {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         }
     }
+};
+
+var Door = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/Selector.png';
+};
+
+Door.prototype = {
+    update: function (dt) {
+        this.checkCollisions();
+    },
+
+    checkCollisions: function () {
+        var doorLeftX = this.x - 60;
+        var doorRightX = this.x + 60;
+        var doorTopY = this.y - 20;
+        var doorBottomY = this.y + 120;
+        if (key.status === 'picked' && player.x > doorLeftX && player.x < doorRightX &&
+            player.y > doorTopY && player.y < doorBottomY) {
+            key.status = 'onground';
+            player.resetPosition();
+            player.level += 1;
+        }
+    },
+
+    render: function () {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
 };
 
 
@@ -285,6 +310,7 @@ var allEnemies = [new Enemy(0, 60, 290),
 player = new Player();
 var allStones = [new Stone (60), new Stone (230), new Stone (310)];
 var key = new Key (140);
+var door = new Door (505, 50);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

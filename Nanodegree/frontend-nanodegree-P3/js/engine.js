@@ -99,6 +99,7 @@ var Engine = (function(global) {
         });
         player.update(dt);
         key.update(dt);
+        door.update(dt);
 
 
     }
@@ -159,8 +160,10 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
+        door.render();
         player.render();
         key.render();
+
 
 
     }
@@ -190,7 +193,8 @@ var Engine = (function(global) {
         'images/char-horn-girl.png',
         'images/char-pink-girl.png',
         'images/Rock.png',
-        'images/Key.png'
+        'images/Key.png',
+        'images/Selector.png'
 
     ]);
     Resources.onReady(init);
