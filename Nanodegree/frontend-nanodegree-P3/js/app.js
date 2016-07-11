@@ -159,16 +159,40 @@ var Stone = function (x,y) {
     this.y = y;
     this.stoneLeftX = this.x - 80;
     this.stoneRightX = this.x + 80;
-    this.stoneTopY = this.y - 80;
-    this.stoneBottomY = this.y + 80;
+    this.stoneTopY = this.y - 10;
+    this.stoneBottomY = this.y + 140;
     this.sprite = 'images/Rock.png';
 };
 
 Stone.prototype = {
     update: function(dt) {
-
+        this.checkCollisions();
     },
 
+    checkCollisions: function () {
+        if (player.x > this.stoneLeftX && player.x < this.stoneRightX &&
+            player.y > this.stoneTopY && player.y < this.stoneBottomY) {
+            switch (player.status) {
+                case ('moveLeft'):
+                    player.status = 'stop';
+                    player.x = this.stoneRightX;
+                    break;
+                case ('moveRight'):
+                    player.status = 'stop';
+                    player.x = this.stoneLeftX;
+                    break;
+                 case ('moveTop'):
+                    player.status = 'stop';
+                    player.y = this.stoneBottomY;
+                    break;
+                case ('moveBottom'):
+                    player.status = 'stop';
+                    player.y = this.stoneTopY;
+                    break;                
+            }
+
+        }
+    },
 
     render: function () {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -209,3 +233,7 @@ document.addEventListener('keyup', function(e) {
     };
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+
+
