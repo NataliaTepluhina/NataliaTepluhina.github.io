@@ -1,3 +1,4 @@
+//This global variable serves to mark while the game is ended
 var gameFlag = 'started';
 
 
@@ -31,7 +32,7 @@ Enemy.prototype = {
         this.checkCollisions();
     },
 
-    //Function to detect collisions with player
+    //Function to detect collisions beetween enemy and player
     checkCollisions: function() {
         var enemyLeftX = this.x - 60;
         var enemyRightX = this.x + 60;
@@ -91,7 +92,8 @@ Player.prototype = {
            this.move(dt);
            this.changeSprite();
         },
-        //Asset status while given key is pressed
+
+        //Change player.status status while given key is pressed
         handleInput: function (key) {
             switch (key) {
                 case ('left'):
@@ -144,7 +146,7 @@ Player.prototype = {
             }
         },
 
-        //Move player back to its initial position after collision with enemy
+        //Move player back to its initial position after collision with enemy and dropping the key on the ground
         resetPosition: function () {
             this.x = this.startX;
             this.y = this.startY;
@@ -152,7 +154,7 @@ Player.prototype = {
             key.status = "onground";
         },
 
-        // Draw the player on the screen,
+        // Draw the player on the screen
         render: function () {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
             ctx.font = "40px Arial Black";
@@ -164,6 +166,7 @@ Player.prototype = {
 
 };
 
+//Class for the stones which will stop our player character
 var Stone = function (y) {
     this.x = 101*(Math.floor(Math.random()*7));
     this.y = y;
@@ -175,6 +178,7 @@ Stone.prototype = {
         this.checkCollisions();
     },
 
+    //This function detects the collision between player and stone and stops player movement
     checkCollisions: function () {
         var stoneLeftX = this.x - 90;
         var stoneRightX = this.x + 90;
@@ -223,15 +227,18 @@ Stone.prototype = {
         }
     },
 
+    //Resets stones positions after level-up
     reset: function () {
         this.x = 101*(Math.floor(Math.random()*7));
     },
 
+    //Draws stones on the screen
     render: function () {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 };
 
+//Class for the key which is needed to open the door between levels - and princess' heart as well
 var Key = function(y) {
     this.x = 101*(Math.floor(Math.random()*5) + 1);
     this.y = y;
@@ -247,6 +254,7 @@ Key.prototype = {
         this.checkCollisions();
     },
 
+    //Checks collisions between player and key and "gives" key to the player
     checkCollisions: function () {
         var keyLeftX = this.x - 60;
         var keyRightX = this.x + 60;
@@ -258,10 +266,12 @@ Key.prototype = {
         }
     },
 
+    //Resets key position after level-up
     reset: function () {
         this.x = 101*(Math.floor(Math.random()*5) + 1);
     },
 
+    //Draws the key on the screen
     render: function() {
         if (this.status === "onground") {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -269,6 +279,7 @@ Key.prototype = {
     }
 };
 
+//Class for the doors between levels
 var Door = function(x, y) {
     this.x = x;
     this.y = y;
@@ -280,6 +291,8 @@ Door.prototype = {
         this.checkCollisions();
     },
 
+    //Detects while player is moving through the door and resets stones and key positions.
+    //Working only for 2 first levels
     checkCollisions: function () {
         var doorLeftX = this.x - 10;
         var doorRightX = this.x + 10;
@@ -297,6 +310,7 @@ Door.prototype = {
         }
     },
 
+    //Draws the door on the screen
     render: function () {
         if (player.level < 3) {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);            
@@ -306,6 +320,7 @@ Door.prototype = {
 
 };
 
+//Class for the princess - the goal of the game
 var Princess = function(x, y) {
     this.x = x;
     this.y = y;
@@ -317,17 +332,19 @@ Princess.prototype = {
         this.checkCollisions();
     },
 
+    //Checks while player meets his princess and cause a game over status
     checkCollisions: function () {
         var princessLeftX = this.x - 90;
         var princessRightX = this.x + 80;
         var princessTopY = this.y - 80;
         var princessBottomY = this.y + 80;
-        if (key.status === 'picked' && player.x > princessLeftX && player.x < princessRightX &&
+        if (player.level === 3 && key.status === 'picked' && player.x > princessLeftX && player.x < princessRightX &&
             player.y > princessTopY && player.y < princessBottomY) {
             gameFlag = 'end';
         }
     },
 
+    //Draws the princess for the last level
     render: function () {
         if (player.level === 3) {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);            
