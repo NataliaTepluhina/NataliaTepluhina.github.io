@@ -1,7 +1,7 @@
 # BugLife
 ------------------------------------------
 BugLife is a Frogger arcade clone game. It was built to improve my JavaScript skills as part of Udacity's Front-End Nanodegree.
-You can try omline version [here](NataliaTepluhina.github.io/Nanodegree/frontend-nanodegree-P3/index.html)  
+You can try online version [here](NataliaTepluhina.github.io/Nanodegree/frontend-nanodegree-P3/index.html)  
 
 ![game pic](http://i.imgur.com/tc11GHx.jpg)
 
