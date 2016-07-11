@@ -79,13 +79,13 @@ var Player = function (x, y, dt){
     this.sprite = 'images/enemy-bug_right.png';
     this.keyStatus = false;
     this.status = 'stop';
-    this.wallChecker = false;
+    this.level = 1;
 };
 
 Player.prototype = {
         update: function(dt) {
            this.move(dt);
-           this.changeSprite(); 
+           this.changeSprite();
         },
         //Asset status while given key is pressed
         handleInput: function (key) {
@@ -145,11 +145,19 @@ Player.prototype = {
             this.x = startX;
             this.y = startY;
             this.sprite = 'images/enemy-bug_right.png';
+            this.keyStatus = false;
+            this.level = 1;
+            key.status = "onground";
         },
 
         // Draw the player on the screen,
         render: function () {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+            ctx.font = "40px Arial Black";
+            ctx.fillStyle = "white";
+            ctx.fillText("Level " + this.level, 30, 105);
+            ctx.strokeStyle = "black";
+            ctx.strokeText("Level " + this.level, 30, 105);
         },
 
 };
@@ -157,10 +165,6 @@ Player.prototype = {
 var Stone = function (y) {
     this.x = 101*(Math.floor(Math.random()*7));
     this.y = y;
-    this.stoneLeftX = this.x - 90;
-    this.stoneRightX = this.x + 100;
-    this.stoneTopY = this.y;
-    this.stoneBottomY = this.y + 140;
     this.sprite = 'images/Rock.png';
 };
 
@@ -170,27 +174,50 @@ Stone.prototype = {
     },
 
     checkCollisions: function () {
-        if (player.x > this.stoneLeftX && player.x < this.stoneRightX &&
-            player.y > this.stoneTopY && player.y < this.stoneBottomY) {
+        stoneLeftX = this.x - 90;
+        stoneRightX = this.x + 90;
+        stoneTopY = this.y;
+        stoneBottomY = this.y + 140;
+        if (player.x > stoneLeftX && player.x < stoneRightX &&
+            player.y > stoneTopY && player.y < stoneBottomY) {
             switch (player.status) {
                 case ('moveLeft'):
                     player.status = 'stop';
-                    player.x = this.stoneRightX;
+                    if (Math.abs (player.x - stoneRightX) < Math.abs (player.x - stoneLeftX)) {
+                        player.x = stoneRightX;
+                    }
+                    else {
+                        player.x = stoneLeftX;
+                    }
                     break;
                 case ('moveRight'):
                     player.status = 'stop';
-                    player.x = this.stoneLeftX;
+                    if (Math.abs (player.x - stoneLeftX) < Math.abs (player.x - stoneRightX)) {
+                        player.x = stoneLeftX;
+                    }
+                    else {
+                        player.x = stoneRightX;
+                    }
                     break;
                  case ('moveTop'):
                     player.status = 'stop';
-                    player.y = this.stoneBottomY;
+                    if (Math.abs (player.y - stoneBottomY) < Math.abs (player.y - stoneTopY)) {
+                        player.y = stoneBottomY;
+                    }
+                    else {
+                        player.y = stoneTopY;
+                    }
                     break;
                 case ('moveBottom'):
                     player.status = 'stop';
-                    player.y = this.stoneTopY;
+                    if (Math.abs (player.y - stoneTopY) < Math.abs (player.y - stoneBottomY)) {
+                        player.y = stoneTopY;
+                    }
+                    else {
+                        player.y = stoneBottomY;
+                    }
                     break;                
             }
-
         }
     },
 
@@ -199,8 +226,8 @@ Stone.prototype = {
     }
 };
 
-var Key = function(x, y) {
-    this.x = x;
+var Key = function(y) {
+    this.x = 101*(Math.floor(Math.random()*5) + 1);
     this.y = y;
     this.sprite = 'images/Key.png';
     this.width = 20;
@@ -209,8 +236,44 @@ var Key = function(x, y) {
     this.renderStatus = "yes";
 };
 
+Key.prototype = {
+    update: function() {
+        this.checkStatus();
+        this.checkCollisions();
+    },
 
-var allStones = [new Stone (60), new Stone (140), new Stone (310)];
+    checkStatus: function() {
+        if (this.status === "picked") {
+            player.keyStatus = 1;
+            this.renderStatus = "no";
+        } 
+        else if (this.status === "onground") {
+            player.keyStatus = 0;
+            this.renderStatus = "yes";
+        }
+    },
+
+    checkCollisions: function () {
+        keyLeftX = this.x - 60;
+        keyRightX = this.x + 60;
+        keyTopY = this.y;
+        keyBottomY = this.y + 120;
+        if (player.x > keyLeftX && player.x < keyRightX &&
+            player.y > keyTopY && player.y < keyBottomY) {
+            player.keyStatus = true;
+            this.status = 'picked';
+        }
+    },
+
+    render: function() {
+        if (this.renderStatus === "yes") {
+            ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        }
+    }
+};
+
+
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -220,7 +283,8 @@ var allEnemies = [new Enemy(0, 60, 290),
                   new Enemy(0, 230, 400),
                   new Enemy(0, 320, 320)];
 player = new Player();
-
+var allStones = [new Stone (60), new Stone (230), new Stone (310)];
+var key = new Key (140);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

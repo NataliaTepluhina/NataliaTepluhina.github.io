@@ -98,6 +98,7 @@ var Engine = (function(global) {
             stone.update(dt);
         });
         player.update(dt);
+        key.update(dt);
 
 
     }
@@ -159,6 +160,7 @@ var Engine = (function(global) {
             enemy.render();
         });
         player.render();
+        key.render();
 
 
     }
