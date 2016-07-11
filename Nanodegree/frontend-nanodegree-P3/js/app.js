@@ -1,7 +1,6 @@
 //This global variable serves to mark while the game is ended
 var gameFlag = 'started';
 
-
 // Enemies our player must avoid
 var Enemy = function(startX, startY, speed) {
     // Variables applied to each of our instances go here,
@@ -43,8 +42,8 @@ Enemy.prototype = {
                 player.resetPosition();
                 player.level = 1;
             }
-
     },
+
     // Draw the enemy on the screen, required method for game
     render: function() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -68,14 +67,11 @@ Enemy.prototype = {
         }
         return pic;
     }
-
-
 };
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-
 
 var Player = function (dt){
     this.startX = 205;
@@ -97,51 +93,50 @@ Player.prototype = {
         handleInput: function (key) {
             switch (key) {
                 case ('left'):
-                    this.status = "moveLeft";
+                    this.status = 'moveLeft';
                     break;
                 case ('right'):
-                    this.status = "moveRight";
+                    this.status = 'moveRight';
                     break;
                 case ('up'):
-                    this.status = "moveTop";
+                    this.status = 'moveTop';
                     break;
                 case ('down'):
-                    this.status = "moveBottom";
+                    this.status = 'moveBottom';
                     break;
                 default: 
-                    this.status = "stop";
+                    this.status = 'stop';
             }
         },
 
         //Move player inside canvas boundaries to the given direction
         move: function (dt) {
-            if (this.status === "moveLeft" && this.x > 0) {
+            if (this.status === 'moveLeft' && this.x > 0) {
                 this.x -= dt * 160;
             }
-            if (this.status === "moveRight" && this.x < ctx.canvas.width - 100) {
+            if (this.status === 'moveRight' && this.x < ctx.canvas.width - 100) {
                 this.x += dt * 160;
             }
-            if (this.status === "moveTop" && this.y > 52) {
+            if (this.status === 'moveTop' && this.y > 52) {
                 this.y -= dt * 130;
             }
-            if (this.status === "moveBottom" && this.y < ctx.canvas.height - 100) {
+            if (this.status === 'moveBottom' && this.y < ctx.canvas.height - 100) {
                 this.y += dt * 130;
-            }  
-        
+            }
         },
 
         //Change player image while changing movement direction
         changeSprite: function () {
-            if (this.status === "moveLeft") {
+            if (this.status === 'moveLeft') {
                 this.sprite = 'images/enemy-bug_left.png';
             }
-            if (this.status === "moveRight") {
+            if (this.status === 'moveRight') {
                 this.sprite = 'images/enemy-bug_right.png';
             }
-            if (this.status === "moveTop") {
+            if (this.status === 'moveTop') {
                 this.sprite = 'images/enemy-bug_top.png';
             }
-            if (this.status === "moveBottom") {
+            if (this.status === 'moveBottom') {
                 this.sprite = 'images/enemy-bug_bottom.png';
             }
         },
@@ -151,19 +146,18 @@ Player.prototype = {
             this.x = this.startX;
             this.y = this.startY;
             this.sprite = 'images/enemy-bug_right.png';
-            key.status = "onground";
+            key.status = 'onground';
         },
 
         // Draw the player on the screen
         render: function () {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-            ctx.font = "40px Arial Black";
-            ctx.fillStyle = "white";
-            ctx.fillText("Level " + this.level, 30, 105);
-            ctx.strokeStyle = "black";
-            ctx.strokeText("Level " + this.level, 30, 105);
+            ctx.font = '40px Arial Black';
+            ctx.fillStyle = 'white';
+            ctx.fillText('Level ' + this.level, 30, 105);
+            ctx.strokeStyle = 'black';
+            ctx.strokeText('Level ' + this.level, 30, 105);
         },
-
 };
 
 //Class for the stones which will stop our player character
@@ -245,8 +239,7 @@ var Key = function(y) {
     this.sprite = 'images/Key.png';
     this.width = 20;
     this.height = 50;
-    this.status = "onground";
-    this.renderStatus = "yes";
+    this.status = 'onground';
 };
 
 Key.prototype = {
@@ -273,7 +266,7 @@ Key.prototype = {
 
     //Draws the key on the screen
     render: function() {
-        if (this.status === "onground") {
+        if (this.status === 'onground') {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         }
     }
@@ -315,9 +308,7 @@ Door.prototype = {
         if (player.level < 3) {
             ctx.drawImage(Resources.get(this.sprite), this.x, this.y);            
         }
-
     }
-
 };
 
 //Class for the princess - the goal of the game
@@ -351,7 +342,6 @@ Princess.prototype = {
         }
 
     }
-
 };
 
 
