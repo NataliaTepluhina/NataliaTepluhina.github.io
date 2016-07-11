@@ -4,12 +4,13 @@
     <title>Portfolio Project</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
 <!--     It's an additional css file to normalize my css -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- Header with logo and name -->
     <header>
         <div class="logo">
             <img class="logo-bug" src="images/Cockroach.svg" alt="My pretty bugged logo">
@@ -20,11 +21,13 @@
         </div>
     </header>
     <main class="container">
+<!--     Our large picture comes here -->
         <picture>
-            <source media="(min-width: 701px)" srcset="images/back.jpg 2x, images/back_960.jpg" alt="Nice background image">
-            <source media="(min-width: 450px)" srcset="images/back_1400.jpg 2x, images/back_700.jpg" alt="Nice background image">
+            <source media="(min-width: 701px)" srcset="images/back.jpg 2x, images/back_960.jpg">
+            <source media="(min-width: 450px)" srcset="images/back_1400.jpg 2x, images/back_700.jpg">
             <img src="images/back_450.jpg" srcset="images/back_900.jpg 2x images/back_450.jpg 1x" alt="Nice background image">
         </picture>
+<!--         Portfolio projects -->
         <h3>My featured work</h3>
         <section class="works">
             <figure class="project">
@@ -83,6 +86,7 @@
             </figure>
         </section>
     </main>
+    <!-- Here is footer with my social links and copyright -->
     <footer>
         <div class="social">
             <a class="zocial-facebook" href="#"></a>
