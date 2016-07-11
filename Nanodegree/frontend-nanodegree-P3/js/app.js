@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(startX, startY, speed, sprite) {
+var Enemy = function(startX, startY, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.x = startX;
@@ -7,7 +7,7 @@ var Enemy = function(startX, startY, speed, sprite) {
     this.speed = speed;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = sprite;
+    this.sprite = Enemy.prototype.selectSprite ();
     //TODO: create an array of enemies sprites and function to randomize
 };
 
@@ -154,12 +154,12 @@ Player.prototype = {
 
 };
 
-var Stone = function (x,y) {
-    this.x = x;
+var Stone = function (y) {
+    this.x = 101*(Math.floor(Math.random()*7));
     this.y = y;
-    this.stoneLeftX = this.x - 80;
-    this.stoneRightX = this.x + 80;
-    this.stoneTopY = this.y - 10;
+    this.stoneLeftX = this.x - 90;
+    this.stoneRightX = this.x + 100;
+    this.stoneTopY = this.y;
     this.stoneBottomY = this.y + 140;
     this.sprite = 'images/Rock.png';
 };
@@ -199,15 +199,26 @@ Stone.prototype = {
     }
 };
 
-var allStones = [new Stone (300, 400), new Stone (100, 60)];
+var Key = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/Key.png';
+    this.width = 20;
+    this.height = 50;
+    this.status = "onground";
+    this.renderStatus = "yes";
+};
+
+
+var allStones = [new Stone (60), new Stone (140), new Stone (310)];
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy(0, 60, 290, Enemy.prototype.selectSprite()),
-                  new Enemy(0, 140, 200, Enemy.prototype.selectSprite()),
-                  new Enemy(0, 230, 400, Enemy.prototype.selectSprite()),
-                  new Enemy(0, 320, 320, Enemy.prototype.selectSprite())];
+var allEnemies = [new Enemy(0, 60, 290),
+                  new Enemy(0, 140, 200),
+                  new Enemy(0, 230, 400),
+                  new Enemy(0, 320, 320)];
 player = new Player();
 
 
