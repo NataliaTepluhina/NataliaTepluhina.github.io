@@ -9,7 +9,27 @@
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <link href="css/print.css" rel="stylesheet" media="print">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
+
+    <style>
+    html {
+      font-size: 100%;
+      overflow-y: scroll;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: none;
+    }
+
+    body { 
+      margin: 0; 
+      font-size: 14px;
+      line-height: 1.61;
+      background: #fff; 
+      font-family: 'Open Sans', sans-serif; 
+      color: #333;
+    }
+
+    header, footer, .container { max-width: 45em; margin: 0 auto; }
+    </style>
 
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
@@ -18,18 +38,6 @@
       // Optional TODO: replace with your Google Analytics profile ID.
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
-    </script>
-
-    <script>
-      var cb = function() {
-      var l = document.createElement('link'); l.rel = 'stylesheet';
-      l.href = 'css/style.css';
-      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
-      };
-      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-      webkitRequestAnimationFrame || msRequestAnimationFrame;
-      if (raf) raf(cb);
-      else window.addEventListener('load', cb);
     </script>
 
 
@@ -80,7 +88,7 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
-
-<!--     <link href="css/style.css" rel="stylesheet"> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet">
   </body>
 </html>
