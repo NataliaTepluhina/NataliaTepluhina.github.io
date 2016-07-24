@@ -31,12 +31,19 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest('dist/views/css'));
 });
 
+/*I tried to use gulp-imagemin for images optimisation but it works really bad with large JPG files (only near 10% compression).
+I have tried to use gulp-imagemin plugins such as imagemin-jpegtran or imagemin-jpegoptim but I had the same result. So I
+decided to compress JPGs manually and to leave PNGs for gulp-imagemin*/
 gulp.task('images', function(){
-    gulp.src('src/img/**/*.*')
+    gulp.src('src/img/**/*.png')
         .pipe(cache(imagemin()))
         .pipe(gulp.dest('dist/img'));
-    gulp.src('src/views/images/**/*.*')
+    gulp.src('src/views/images/**/*.png')
         .pipe(cache(imagemin()))
+        .pipe(gulp.dest('dist/views/images'));
+    gulp.src('src/img/**/*.jpg')
+        .pipe(gulp.dest('dist/img'));
+    gulp.src('src/views/images/**/*.jpg')
         .pipe(gulp.dest('dist/views/images'));
 });
 
