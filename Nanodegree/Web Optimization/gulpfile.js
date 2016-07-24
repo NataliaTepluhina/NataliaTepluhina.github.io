@@ -6,6 +6,9 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var server = require('gulp-server-livereload');
 var imagemin = require('gulp-imagemin');
+var imageminJpegtran = require('imagemin-jpegtran');
+var imageminOptipng = require('imagemin-optipng');
+var imageminJpegoptim = require('imagemin-jpegoptim');
 var cache = require('gulp-cache');
 var uglify = require('gulp-uglify');
 

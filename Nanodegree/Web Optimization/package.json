@@ -14,12 +14,19 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-browserify": "^0.5.1",
     "gulp-cache": "^0.4.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^2.4.0",
     "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.5",
     "gulp-server-livereload": "^1.5.4",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-webserver": "^0.9.1",
+    "imagemin-jpegtran": "^4.3.2",
+    "imagemin-optipng": "^4.3.0"
+  },
+  "dependencies": {
+    "imagemin-jpegoptim": "^5.0.0",
+    "jpegoptim-bin": "^3.0.0"
   }
 }
