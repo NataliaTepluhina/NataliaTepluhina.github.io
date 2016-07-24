@@ -498,21 +498,30 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
-// Extra changes: as document.getElementsByClassName is more effective than document.querySelectorAll,
+// Extra changes: 
+// 1. As document.getElementsByClassName is more effective than document.querySelectorAll,
 // I've made a replacement. Also var items doesn't change its value, so I moved it
-// outside the function. To reduce the amount of simultaneous math operations I've created
-// a scrollTop var.
+// outside the function.
+// 2. I created two more global variables for requestAnimationFrame function. The idea was from
+// www.html5rocks.com - Leaner, meaner, faster animations...
+
+var latestScrollTop = 0;
+var tick;
 
 var items = document.getElementsByClassName('mover');
 
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var scrollTop = document.body.scrollTop / 1250;
+  var currentScrollTop = latestScrollTop;
+  var scrollTop = currentScrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollTop) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
+
+  // Now we need to re-assign tick so another animation frame can start
+  tick = false;
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -524,8 +533,20 @@ function updatePositions() {
   }
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+// Animate pizzas with requestAnimationFrame function
+function whenScroll() {
+    if (!tick) {
+        latestScrollTop = window.scrollY;
+        tick = true;
+        requestAnimationFrame(updatePositions);
+    }
+}
+
+// Set initial scroll position
+window.requestAnimationFrame(updatePositions);
+
+// Add event listener on scroll and run whenScroll function
+window.addEventListener('scroll', whenScroll, false);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
