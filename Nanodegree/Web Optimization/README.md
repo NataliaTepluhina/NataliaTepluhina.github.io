@@ -12,23 +12,27 @@ GitHub Pages website can be found [here](http://nataliatepluhina.github.io/Nanod
 ## HTML Optimization
 
 * Inlined styles needed above the fold.
-* Added media attribute so print.css only loads for print purpose
+* Added `media` attribute so `print.css` only loads for print purpose
 * Set the GoogleAnalytics script to load asynchronously.
-* Moved css files to the end of body to delay their loading
+* Replaced the link to Google Fonts with the WebFont loader script
 
 ## Image Optimization
 
 * Resized and adjusted quality of images to match our pages
-* Compress JPGs manually and PNGs with gulp-imagemin
+* Compress JPGs manually and PNGs with `gulp-imagemin`
 
 ## JavaScript Optimization
 
-* Replaced `querySelectorAll` with `getElementsByClassName` to improve performance.
+* Replaced `querySelectorAll` with `getElementsByClassName` and `getElementById` to improve performance.
 * Moved DOM methods from functions and for loops so they are not redefined each time calling function is run.
 * Changed resize pizza code using the switch to set three percentage values instead of width calculations
-* Used requestAnimationFrame to animate moving pizzas instead of simple scroll event listener
-* Cut down on the number of moving pizzas from 100 to 50
+* Used `requestAnimationFrame` to animate moving pizzas instead of simple scroll event listener
+* Number of moving pizzas now calculates dynamically depending on screen height
+* Inside the `changePizzaSizes` function the length of randomPizzas array now is saved into local variable
+* Var `elem` now is declared in the initialisation of the for-loop. This will prevent it from being created every time the loop is executed
 
 ## CSS Optimization
 
-Added will-change attribute to "mover" selector to improve composite performance
+* Added `will-change` attribute to "mover" selector to improve composite performance
+* Added `transform: translateZ(0)` and `backface-visibility: hidden` properties to "mover" selector to improve GPU performance
+* Added vendor prefixes to save cross-browser compatibility

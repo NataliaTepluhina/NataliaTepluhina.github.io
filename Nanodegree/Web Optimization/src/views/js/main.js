@@ -1,3 +1,4 @@
+'use strict';
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
@@ -403,16 +404,17 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // Extra change: replaced querySelectorAll with getElementById
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -445,11 +447,13 @@ var resizePizzas = function(size) {
   // I've made a replacement.
   // 2. I changed for loop to remove DOM methods such as getElementsByClassName from loop and
   // replaced offsetWidth with percent values returned from sizeSwitcher
+  // 3. Saved the array length, which is part of the condition statement, in a local variable, 
+  // so the array's length property is not accessed to check its value at each iteration.
   function changePizzaSizes(size) {
     var randomPizzas = document.getElementsByClassName('randomPizzaContainer');
     var newSize = sizeSwitcher(size);
-
-    for (var i = 0; i < randomPizzas.length; i++) {
+    var amountPizzas = randomPizzas.length;
+    for (var i = 0; i < amountPizzas; i++) {
       randomPizzas[i].style.width = newSize + "%";
     }
   }
@@ -549,18 +553,33 @@ window.requestAnimationFrame(updatePositions);
 window.addEventListener('scroll', whenScroll, false);
 
 // Generates the sliding pizzas when the page loads.
+// Extra change: added some global variables to calculate amount of pizzas 
+// dynamically depending on screen height
+var cols = 8;
+var s = 256;
+var rows = Math.floor(window.screen.height / s );
+var pizzasAmount = cols * rows;
+
+// This function is added to test pizzasAmount in Chrome Dev Tools device toolbar responsive mode
+window.onresize = function () {
+  rows = Math.floor(window.screen.height / s );
+  pizzasAmount = cols * rows;
+};
+
+// Extra changes: 
+// 1. Replaced querySelectorAll with getElementById
+// 2. Var elem now is declared in the initialisation of the for-loop. 
+// This will prevent it from being created every time the loop is executed
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
-  var s = 256;
-  for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
+  for (var i = 0, elem; i < pizzasAmount; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });

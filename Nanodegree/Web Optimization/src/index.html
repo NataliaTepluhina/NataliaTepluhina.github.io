@@ -7,10 +7,10 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <link href="css/print.css" rel="stylesheet" media="print">
-
-    <style type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
       html {
         font-size: 100%;
         overflow-y: scroll;
@@ -56,6 +56,18 @@
       li p { font-size: 0.9em; font-style: italic; }
 
     </style>
+
+  <!--   Replaced the link to Google Fonts with the WebFont loader script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Open Sans']
+        }
+      });
+    </script>
+
+
 
 
     <script>
@@ -114,7 +126,5 @@
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
       </footer>
     </div>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
-    <link href="css/style.css" rel="stylesheet">
   </body>
 </html>
