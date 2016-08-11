@@ -12,4 +12,4 @@ Download this repository and open index.html or just simply use the link to live
 
 Click on the markers or on the items in the list to fins specific venue. You will see an information window with place's name, address, phone and working hours. In addition, the FourSquare information will appear in the right-side block (name of the venue, photo, link to venue's site and Facebook page, if they exist).
 
-To filter results, enter the request (name or type of the venue) inside input field and click on the `"Search"` button
+To filter results, enter the request (name or type of the venue) inside input field and click on the `Search` button
