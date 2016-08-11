@@ -1,9 +1,28 @@
-window.onload = function() {
+var map;
+var city;
+
+var viewModel = new ViewModel();
+
+// Creates the map with the center in given coordinates (Budva, Montenegro by default).  Then gets popular
+// restaurants/bars/cafe in the area.
+function initMap () {
+    city = {lat: 42.288056, lng: 18.8425};
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: city,
+        zoom: 15
+    });
+
+    viewModel.getAllPlaces();
+}
+
+//Error handler function for Google Maps loading script
+function googleError () {
+    alert('Error! Google Maps loading failed!');
+}
 
 function ViewModel () {
     var self = this;
-    var map,
-        infowindow,
+    var infowindow,
         bounds;
 
     // Set values from getDayOfWeek function and string in GooglePlaces'
@@ -19,25 +38,12 @@ function ViewModel () {
     };
 
 
-     // Creates the map with the center in given coordinates (Budva, Montenegro by default).  Then gets popular
-     // restaurants/bars/cafe in the area.
-
-    function initMap() {
-        city = {lat: 42.288056, lng: 18.8425};
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: city,
-            zoom: 15
-        });
-
-        getAllPlaces();
-    }
-
     // Makes a request to Google for popular restaurants and hotels in a given place.
     // Executes a callback function with the response data from Google.
 
     self.allPlaces = ko.observableArray([]);
 
-    function getAllPlaces() {
+    self.getAllPlaces = function() {
         self.allPlaces([]);
         var request = {
             location: city,
@@ -47,7 +53,7 @@ function ViewModel () {
         infowindow = new google.maps.InfoWindow();
         service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, getAllPlacesCallback);
-    }
+    };
 
 
      // Takes resulting places from getAllPlaces function, adds additional
@@ -70,6 +76,10 @@ function ViewModel () {
             });
             map.fitBounds(bounds);
         }
+
+        else {
+            alert('Error! Google Places loading failed');
+        }
     }
 
      
@@ -85,7 +95,7 @@ function ViewModel () {
         // into view and click it.
         google.maps.event.addListener(marker, 'click', function () {
             document.getElementById(place.id).scrollIntoView();
-            $('#' + place.id).trigger('click');
+            self.selectPlace(place);
         });
         return marker;
     }
@@ -224,6 +234,9 @@ function ViewModel () {
                     locOpenHours = '<p>' + openHours + '</p>';
                 }
             }
+            else {
+                alert('Error! Google Places loading failed');
+            }
             var content = '<div class="infowindow">' + locName + locStreet +
                 locCityState + locPhone + locOpenHours + '</div>';
             infowindow.setContent(content);
@@ -255,10 +268,8 @@ function ViewModel () {
         self.fsRating('');
         var foursquareURL = fsBaseUrl + 'search?ll=42.288056,18.8425&query=' + name + '&' + fsAuth +'v=20160810';
             //Getting FourSquareID and url of the venue
-            $.ajax({
-                url: foursquareURL,
-
-                success: function(data) {
+            $.ajax({url: foursquareURL})
+                .done(function(data) {
                     if (data.response.venues.length > 0) {
                         fsID = data.response.venues[0].id;
                         if (data.response.venues[0].url) {
@@ -268,9 +279,8 @@ function ViewModel () {
                         foursquareURL = fsBaseUrl + fsID + '?' + fsAuth +'v=20160810';
 
                         //Getting venue image, Facebook link and rating (if present in foursquare info)
-                        $.ajax({
-                            url: foursquareURL,
-                            success: function(data) {
+                        $.ajax({url: foursquareURL})
+                            .done(function(data) {
                                 self.fsName(data.response.venue.name);
 
                                 if (data.response.venue.bestPhoto) {
@@ -285,30 +295,36 @@ function ViewModel () {
                                 if (data.response.venue.rating) {
                                     self.fsRating(data.response.venue.rating);
                                 }
-                            },
+                            })
 
-                            error: function(data) {
+                            .fail(function(data) {
                                 alert("Error occured while retrieving data from " +
                                     "FourSquare. Please try again later.");
-                            }
-                        });
+                            });
                     }
                     else {
                         self.fsName('No such venue in FourSquare');
                     }
-                },
+                })
 
-                error: function(data) {
+                .fail(function(data) {
                     alert("Error occured while retrieving data from " +
                         "FourSquare. Please try again later.");
-                }
-            });
+                });
     };
 
-    initMap();
+
+    // Toggles visibility of search results list. If window size is less than 865px, media-query will hide the list
+    // until user will click on menu button.
+    self.openMenu = ko.observable(false);
+
+
+    self.toggleMenu = function () {
+        self.openMenu(!self.openMenu());
+    };
 
 }
 
-ko.applyBindings(new ViewModel());
 
-};
+
+ko.applyBindings(viewModel);
