@@ -11,7 +11,7 @@ GitHub Pages website can be found [here](http://nataliatepluhina.github.io/Nanod
 
 ## HTML Optimization
 
-* Inlined styles needed above the fold.
+* Inlined `style.css` file
 * Added `media` attribute so `print.css` only loads for print purpose
 * Set the GoogleAnalytics script to load asynchronously.
 * Replaced the link to Google Fonts with the WebFont loader script

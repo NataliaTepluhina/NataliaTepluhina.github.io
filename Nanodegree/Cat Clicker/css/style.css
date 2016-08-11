@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    font: 25px Tahoma;
+}
+
+.cat {
+    margin: 10px;
+}
+
+.catlink {
+    display: block;
+}
+
+.list {
+    width: 10%;
+    height: 530px;
+    padding: 30px;
+    background-color: #a0a0a0;
+}
+
+
+#admin {
+    float: left;
+    margin: 40px;
+}
+
+#adminarea {
+    display: none;
+    width: 280px;
+    float: left;
+    margin: 30px;
+}
+
+label {
+    width: 30px;
+}
+
+#adminname, #adminclicks, #adminpic {
+    margin: 10px;
+}
+
+#adminname {
+    margin-left: 30px;
+}
+
+#adminclicks {
+    margin-left: 22px;
+}

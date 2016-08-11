@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/knockout-3.4.0.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside data-bind="foreach: catList" class="list">
+            <a data-bind="text: name, click: $parent.showCat" class="catlink" href=""></a>
+        </aside>
+        <div data-bind="with: currentCat" class="cat">
+            <p data-bind="text: name" id="name">123</p>
+            <img data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}" id="pic" src="" alt="">
+            <p id="clicks">Cat clicks: <span data-bind="text: clickCount"id="number"></span></p>
+        </div>
+    </div>
+    <button id="admin">Admin</button>
+    <div id="adminarea">
+        <label>Name<input type="text" id="adminname" value=""></label>
+        <label>ImgURL<input type="text" id="adminpic"></label>
+        <label>#clicks<input type="text" id="adminclicks"></label>
+        <button id="cancel">Cancel</button>
+        <button id="save">Save</button>           
+    </div>
+</body>
+</html>
