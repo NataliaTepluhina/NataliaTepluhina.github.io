@@ -285,7 +285,6 @@ function ViewModel () {
                                 if (data.response.venue.rating) {
                                     self.fsRating(data.response.venue.rating);
                                 }
-                                
                             },
 
                             error: function(data) {
