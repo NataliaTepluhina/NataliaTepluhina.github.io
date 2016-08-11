@@ -271,7 +271,6 @@ function ViewModel () {
                         $.ajax({
                             url: foursquareURL,
                             success: function(data) {
-                                console.log(data);
                                 self.fsName(data.response.venue.name);
 
                                 if (data.response.venue.bestPhoto) {
@@ -286,7 +285,6 @@ function ViewModel () {
                                 if (data.response.venue.rating) {
                                     self.fsRating(data.response.venue.rating);
                                 }
-                                console.log(self.fsName(), self.fsImg(), self.fsFacebook(), self.fsRating());
                                 
                             },
 
