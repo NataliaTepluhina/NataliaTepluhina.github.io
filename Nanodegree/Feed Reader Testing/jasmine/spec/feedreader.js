@@ -105,12 +105,15 @@ $(function() {
              //Now we make firstFeed equal the feed text when the initial feed is loaded
             loadFeed(0, function() {
                 firstFeed = $('.feed').children().text();
+
+                //Loading new feed other than initial
+                loadFeed(1, function() {
+                    secondFeed = $('.feed').children().text();
+                    done();
+                });
             });
-            //Loading new feed other than initial
-            loadFeed(1, function() {
-                secondFeed = $('.feed').children().text();
-                done();
-            });
+
+
         });
 
         it('new feed is loaded and the content changes', function(done) {
