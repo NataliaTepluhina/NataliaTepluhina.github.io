@@ -1,0 +1,55 @@
+<!--HTML code to show shopping cart page-->
+<h3 ng-if="!store.amount">Your shopping cart is empty</h3>
+<div ng-if="store.amount > 0" class="basket">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="basket-wrap">
+                <h4>Your order</h4>
+                <div ng-repeat="pizza in store.basket" class="row basket-product">
+                    <div class="col-xs-6">
+                        <img class="img-responsive" ng-src="{{ pizza.cover }}" alt="">
+                    </div>
+                    <div class="col-xs-6">
+                        <button ng-click="store.removeItem(pizza)" class="basket-close">X</button>
+                        <p><strong>{{ pizza.name }}</strong></p>
+                        <p>{{ pizza.price | currency }}</p>
+                        <div class="row quantity">
+                            <input disabled class="col-xs-6 quantity-num" type="text" name="quantity" min="1" ng-model="pizza.amount">
+                            <div class="col-xs-6 plusminus">
+                                <button ng-click="store.changeAmount(pizza, 1)"  data-type="plus">+</button>
+                                <button ng-click="store.changeAmount(pizza, -1)" data-type="minus">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 shopping-form">
+            <h4>Fill the form</h4>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="tel" placeholder="Phone">
+                <input type="email" placeholder="E-mail">
+                <input type="text" placeholder="Address">
+                <textarea name="text" placeholder="Your comments"></textarea>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 paycont-form">
+            <h4>Payment</h4>
+            <div class="basket-total">
+                <p class="col-xs-6 col-sm-6 col-md-6 text-left">
+                    <b>Total</b>
+                </p>
+                <p class="col-xs-6 col-sm-6 col-md-6 text-right total-sum"><b>{{ store.cost |currency }}</b></p>
+            </div>
+            <form class=" text-center" action="">
+                <input id="pay-cash" type="radio" name="pay" value="paycash" checked="checked">
+                <label for="pay-cash">Cash</label>
+                <input id="pay-cart" type="radio" name="pay" value="paycart">
+                <label for="pay-cart">Credit card</label>
+            </form>
+            <button class="btn btn-warning center-block">Order now</button>
+            <button class="btn btn-warning center-block">Call me</button>
+        </div>
+    </div>
+</div>

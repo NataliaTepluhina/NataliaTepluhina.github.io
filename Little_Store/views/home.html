@@ -1,0 +1,16 @@
+<!--HTML code to show one pizza block-->
+
+<div class="row gallery">
+    <div ng-repeat="pizza in store.pizzas" class="col-md-3 col-sm-4 col-xs-6 gallery-item center-block">
+        <div class="gallery-img">
+            <img ng-src="{{ pizza.cover }}" class="img-responsive center-block">
+        </div>
+        <div class="gallery-text text-center">
+            {{ pizza.name }}
+        </div>
+        <div class="gallery-row clearfix">
+            <div class="gallery-text gallery-price"><strong>{{ pizza.price | currency }}</strong></div>
+            <input ng-click="store.addToBasket(pizza)" type="button" class="btn btn-warning gallery-button" value="Buy">
+        </div>
+    </div>
+</div>
