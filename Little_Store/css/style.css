@@ -14,6 +14,10 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     outline: 0 !important;
 }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
 
 .clearfix:after {
     visibility: hidden;
