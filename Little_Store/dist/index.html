@@ -44,8 +44,8 @@
                         <a href="#!/basket">
                             <img src="img/basket.png" alt="Cart" class="img-responsive">
                         </a>
-                        <div ng-if="store.amount > 0" class="shopping-amount"><strong>{{ store.amount }}</strong></div>
-                        <div ng-if="store.showCart" class="shopping-cart">
+                        <div ng-cloak ng-if="store.amount > 0" class="shopping-amount"><strong>{{ store.amount }}</strong></div>
+                        <div ng-cloak ng-if="store.showCart" class="shopping-cart">
                             <div class="shopping-cart-top">
                                 <p>Added to cart</p>
                                 <span><em>{{ store.title }}</em></span>
