@@ -1,3 +1,5 @@
+(function() {
+
 angular
     .module('storeApp', ['ngRoute', 'ui.bootstrap', 'ngStorage'])
     .config(function($routeProvider) {
@@ -17,5 +19,6 @@ angular
             .when('/basket', {
                 templateUrl : 'views/basket.html',
                 controller  : 'StoreController'
-            })
+            });
     });
+})();

@@ -2,6 +2,9 @@
     background: url("../img/blocks-bg.jpg") repeat-y;
     min-height: 100vh;
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
 h3 {
     color: #fdc766;
     padding-left: 10px;
@@ -12,10 +15,6 @@ h4 {
 
 button:focus, button:active, input[type="button"]:focus, input[type="button"]:active {
     outline: 0 !important;
-}
-
-[ng\:cloak], [ng-cloak], .ng-cloak {
-    display: none !important;
 }
 
 
@@ -91,6 +90,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
 }
 
 .gallery-img {
+    position: relative;
     border: 1px solid transparent;
     border-radius: 10px 10px 0 0;
 }
@@ -279,6 +279,62 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
 .paycont-form button {
     width: 60%;
     margin-bottom: 10px;
+}
+
+.components {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 116px;
+    width: 100%;
+    background-color: rgba(236,151,31,.8);
+    color: #fff;
+    padding: 12px;
+}
+
+.pizza-components {
+    display: none;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.components-wrapper {
+    padding: 25px;
+}
+
+
+
+.component {
+    padding-top: 10px;
+}
+
+.component a {
+    color: #ec971f;
+}
+
+.component a:hover  {
+    color: #ec971f;
+    text-decoration: none;
+}
+
+.component a:focus, .component a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.components-button {
+    font-size: 18px;
+    color: #000;
+}
+
+.components-button:hover,  .components-button:focus, .components-button:active {
+    color: #000!important;
 }
 
 @media (max-width: 768px) {

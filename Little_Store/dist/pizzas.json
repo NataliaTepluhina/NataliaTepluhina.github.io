@@ -1,0 +1,84 @@
+[{
+  "name": "Margherita",
+  "cover": "img/margarita.jpg",
+  "price": "5.1",
+  "components": ["pizza sauce", "Mozzarella cheese", "tomatoes", "basil"]
+},
+
+  {
+    "name": "Margherita Chile",
+    "cover": "img/margarita-chili.jpg",
+    "price": "5.2",
+    "components": ["Chilli sauce", "Mozzarella cheese", "habanero"]
+  },
+
+  {
+    "name": "Hawaii",
+    "cover": "img/gavayskaya.jpg",
+    "price": "7.15",
+    "components": ["pizza sauce", "Mozzarella cheese", "ham", "pineapple"]
+  },
+
+  {
+    "name": "Havana",
+    "cover": "img/gavana.jpg",
+    "price": "5.85",
+    "components": ["mustard sauce", "Mozzarella cheese", "chicken breast", "pineapples", "canned corn"]
+  },
+
+  {
+    "name": "Hunter",
+    "cover": "img/hunter.jpg",
+    "price": "6.8",
+    "components": ["mustard sauce", "Mozzarella cheese", "smoked sausages", "mushrooms", "red onion", "bell pepper"]
+  },
+
+  {
+    "name": "Jamaica",
+    "cover": "img/jamaica.jpg",
+    "price": "6.9",
+    "components": ["pizza sauce", "Mozzarella cheese", "chicken breast", "pineapples", "habanero"]
+  },
+
+  {
+    "name": "Munich",
+    "cover": "img/munich.jpg",
+    "price": "6.5",
+    "components": ["mustard sauce", "Mozzarella cheese", "smoked sausages", "salami", "red onion"]
+  },
+
+  {
+    "name": "Nicosian",
+    "cover": "img/nicosya.jpg",
+    "price": "6.5",
+    "components": ["pizza sauce", "Mozzarella cheese", "ham", "tomatoes"]
+  },
+
+  {
+    "name": "Pepperoni",
+    "cover": "img/pepperoni.jpg",
+    "price": "5.8",
+    "components": ["mustard sauce", "Mozzarella cheese", "bell pepper", "mushrooms", "salami"]
+  },
+
+  {
+    "name": "Picante",
+    "cover": "img/picante.jpg",
+    "price": "6.15",
+    "components": ["mustard sauce", "Mozzarella cheese", "bacon", "habanero", "gherkin"]
+  },
+
+  {
+    "name": "Student",
+    "cover": "img/student.jpg",
+    "price": "5.35",
+    "components": ["cream sauce", "Mozzarella cheese", "chicken breast", "mushrooms", "gherkin"]
+  },
+
+  {
+    "name": "Vegan",
+    "cover": "img/vega.jpg",
+    "price": "5.2",
+    "components": ["pizza sauce", "tofu cheese", "mushrooms", "tomatoes", "green beans"]
+  }
+]

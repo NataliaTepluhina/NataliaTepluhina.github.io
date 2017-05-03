@@ -1,9 +1,20 @@
 <!--HTML code to show one pizza block-->
 
+<div class="row components-wrapper">
+    <input type="button" class="btn btn-warning components-button" value="Filter components" ng-click="showComponents = !showComponents; store.chooseComponent=''">
+    <div class="row pizza-components" ng-class="{'visible':showComponents}">
+        <div ng-repeat="component in store.components" class="component col-md-2">
+            <a ng-click="store.chooseComponent = component" href="">{{component}}</a>
+        </div>
+    </div>
+</div>
 <div class="row gallery">
-    <div ng-repeat="pizza in store.pizzas" class="col-md-3 col-sm-4 col-xs-6 gallery-item center-block">
-        <div class="gallery-img">
+    <div ng-repeat="pizza in store.pizzas | filter: store.chooseComponent" class="col-md-3 col-sm-4 col-xs-6 gallery-item center-block">
+        <div class="gallery-img" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
             <img ng-src="{{ pizza.cover }}" class="img-responsive center-block">
+            <div class="components" ng-class="{ 'visible': hovering }">
+                {{ pizza.components.toString().split(',').join(', ') }}
+            </div>
         </div>
         <div class="gallery-text text-center">
             {{ pizza.name }}
