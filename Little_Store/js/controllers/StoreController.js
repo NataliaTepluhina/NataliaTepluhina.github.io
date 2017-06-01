@@ -1,5 +1,3 @@
-//TODO: 3) Add conponent filters to the page
-
 
 (function() {
 
@@ -61,7 +59,6 @@
                 this.cost += item.price; //show total cost
                 this.amount ++;
                 this.showCart = true;
-                console.log(this.basket);
                 this.updateStorage();
             };
 
@@ -70,7 +67,6 @@
                 this.cost -= item.amount*item.price;
                 item.amount = 1;
                 this.basket.splice(this.basket.indexOf(item),1);
-                console.log(this.basket);
                 this.updateStorage();
             };
 
@@ -82,9 +78,8 @@
                     this.basket.splice(this.basket.indexOf(item),1);
                     item.amount ++;
                 }
-                console.log(this.basket);
                 this.updateStorage();
-            }
+            };
 
             this.chooseComponent = function(component) {
                 return component;

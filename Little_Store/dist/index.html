@@ -16,17 +16,17 @@
 
 </head>
 <body ng-controller="StoreController as store">
-    <div class="main-container">
+    <div class="main">
         <header class="topsection">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-8">
                     <a href="#!/#home">
-                        <img class="img-responsive logo" src="img/logo.png" alt="Pizza Logo">
+                        <img class="img-responsive topsection__logo" src="img/logo.png" alt="Pizza Logo">
                     </a>
                 </div>
-                <nav class="col-md-4 col-sm-4 col-xs-6 navbar" ng-controller="NavController">
+                <nav class="col-md-4 col-sm-4 col-xs-6 topsection__navbar" ng-controller="NavController">
                     <div class="container">
-                        <div class="navbar-header">
+                        <div class="topsection__navbar-header">
                             <button type="button" class="navbar-toggle pull-left" ng-click="isCollapsed = !isCollapsed">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -34,7 +34,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="collapse navbar-collapse menu" uib-collapse="isCollapsed">
+                        <div class="topsection__menu collapse navbar-collapse" uib-collapse="isCollapsed">
                             <ul class="nav navbar-nav">
                                 <li><a href="#!/#home">Catalog</a></li>
                                 <li><a href="#!/about">Payment & Delivery</a></li>
@@ -43,37 +43,37 @@
                     </div>
                 </nav>
                 <div class="col-md-4 col-sm-4 col-xs-6">
-                    <div class="cart-image pull-right">
+                    <div class="cart pull-right">
                         <a href="#!/basket">
                             <img src="img/basket.png" alt="Cart" class="img-responsive">
                         </a>
-                        <div ng-cloak ng-if="store.amount > 0" class="shopping-amount"><strong>{{ store.amount }}</strong></div>
-                        <div ng-cloak ng-if="store.showCart" class="shopping-cart">
-                            <div class="shopping-cart-top">
+                        <div ng-cloak ng-if="store.amount > 0" class="cart__amount"><strong>{{ store.amount }}</strong></div>
+                        <div ng-cloak ng-if="store.showCart" class="cart__content">
+                            <div class="cart__header">
                                 <p>Added to cart</p>
                                 <span><em>{{ store.title }}</em></span>
                                 <a ng-click="store.showCart=false" href=""><strong>x</strong></a>
                             </div>
-                            <div class="shopping-cart-bottom">
-                                <a href="#!/basket" class="cartButton">
+                            <div class="cart__cost">
+                                <a href="#!/basket" class="cart__button">
                                     <button ng-click="store.showCart = false" class="btn btn-danger">Purchase</button>
                                 </a>
-                                <span class="sum">{{ store.cost | currency }}</span>
+                                <span class="cart__sum">{{ store.cost | currency }}</span>
                             </div>
-                            <div class="underlined"></div>
-                            <div class="underlined-second"></div>
+                            <div class="cart__line"></div>
+                            <div class="cart__line_bottom"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row underlined"></div>
-            <div class="row underlined-second"></div>
+            <div class="row cart__line"></div>
+            <div class="row cart__line_bottom"></div>
         </header>
         <section ng-view class="container-fluid content">
 
         </section>
-        <div class="row underlined-second"></div>
-        <div class="row underlined"></div>
+        <div class="row cart__line_bottom"></div>
+        <div class="row cart__line"></div>
         <footer class="bottomsection text-center">
             (c) 2017
         </footer>

@@ -1,9 +1,6 @@
-.main-container {
+.main {
     background: url("../img/blocks-bg.jpg") repeat-y;
     min-height: 100vh;
-}
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
 }
 h3 {
     color: #fdc766;
@@ -11,6 +8,10 @@ h3 {
 }
 h4 {
     color: #000;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
 }
 
 button:focus, button:active, input[type="button"]:focus, input[type="button"]:active {
@@ -34,7 +35,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     z-index: 1;
 }
 
-.logo {
+.topsection__logo {
     margin: 15px 0 5px 30px;
 }
 
@@ -66,49 +67,49 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     color: #ff8c00;
 }
 
-.cart-image {
+.cart {
     margin: 50px 100px 0 0;
 }
 
-.underlined {
+.cart__line {
     height: 7px;
     background-color: #985f0d;
 }
 
-.underlined-second {
+.cart__line_bottom {
     height: 4px;
     background-color: #fdc766;
 }
 
-.gallery-row, .gallery-text, .gallery-img {
+.pizza__cart, .pizza__text, .pizza__image {
     background-color: #fff;
     margin: 0 10px;
 }
 
-.gallery-item {
+.pizza {
     margin-bottom: 20px;
 }
 
-.gallery-img {
+.pizza__image {
     position: relative;
     border: 1px solid transparent;
     border-radius: 10px 10px 0 0;
 }
 
-.gallery-row {
+.pizza__cart {
     padding: 10px 0;
     border: 1px solid transparent;
     border-radius: 0 0 10px 10px ;
 }
 
-.gallery-row:before {
+.pizza__cart:before {
     box-sizing: border-box;
     border: 1px solid #ec971f;
     width: 86%;
     margin: 0 0 10px 6%;
 }
 
-.gallery-text {
+.pizza__text {
     font: bold 20px Arial;
     padding-top: 10px;
 }
@@ -119,7 +120,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     margin-left: 20px;
 }
 
-.gallery-button {
+.pizza__button {
     float: right;
     margin-right: 20px;
 }
@@ -137,7 +138,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     padding-left: 20px;
 }
 
-.shopping-cart {
+.cart__content {
     background: #fdc766;
     z-index: 1;
     position: absolute;
@@ -146,39 +147,39 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     width: 22em;
 }
 
-.shopping-cart p, span, a {
+.cart__content p, span, a {
     color: #985f0d;
     font-size: 18px;
     margin: 0;
 }
 
-.shopping-cart a {
+.cart__content a {
     display: block;
     position: absolute;
     top: 5px;
     right: 20px;
 }
 
-.shopping-cart a:hover, .shopping-cart a:active, .shopping-cart a:focus {
+.cart__content a:hover, .cart__content a:active, .cart__content a:focus {
     color: #985f0d;
     text-decoration: none;
 }
 
-.shopping-cart-top {
+.cart__header {
     margin: 10px 20px 0 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid #985f0d;
 }
 
-.shopping-cart-bottom {
+.cart__cost {
     margin: 10px 20px;
 }
 
-.sum {
+.cart__sum {
     margin-left: 110px;
 }
 
-.shopping-amount {
+.cart__amount {
     position: absolute;
     top: 48px;
     right: 110px;
@@ -193,22 +194,22 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     text-align: center;
 }
 
-.shopping-cart a.cartButton {
+.cart__content a.cart__button {
     position: static;
     display: inline;
 }
 
-.basket {
+.basket-wrapper {
     padding: 15px;
     background-color: #fff;
 }
 
-.basket-wrap {
+.basket {
     max-height: 600px;
     overflow-y: auto;
 }
 
-.basket-product {
+.basket__product {
     box-sizing: border-box;
     border: 1px solid #eaeaea;
     width: 100%;
@@ -218,7 +219,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     margin-bottom: 10px;
 }
 
-.basket-close {
+.basket__close {
     position: absolute;
     top: 0;
     right: 0;
@@ -226,16 +227,16 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     background-color: transparent;
 }
 
-.quantity {
+.basket__quantity {
     margin: 0;
     padding-left: 30%;
 }
 
-.quantity p {
+.basket__quantity p {
     width: 80%;
 }
 
-.quantity-num {
+.basket__quantity-number {
     padding: 0;
     height: 40px;
     width: 40px;
@@ -244,12 +245,12 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     border: 1px solid #eaeaea;
 }
 
-.plusminus {
+.basket__plusminus {
     padding: 0;
     width: 20px;
 }
 
-.plusminus button{
+.basket__plusminus button{
     background-color: transparent;
     border: 1px solid #eaeaea;
     width: 20px;
@@ -281,7 +282,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     margin-bottom: 10px;
 }
 
-.components {
+.pizza__components {
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -292,7 +293,7 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     padding: 12px;
 }
 
-.pizza-components {
+.filter__pizza-components {
     display: none;
 }
 
@@ -304,46 +305,46 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
     transition: all 0.5s ease;
 }
 
-.components-wrapper {
+.filter {
     padding: 25px;
 }
 
 
 
-.component {
+.filter__single-component {
     padding-top: 10px;
 }
 
-.component a {
+.filter__single-component a {
     color: #ec971f;
 }
 
-.component a:hover  {
+.filter__single-component a:hover  {
     color: #ec971f;
     text-decoration: none;
 }
 
-.component a:focus, .component a:active {
+.filter__single-component a:focus, .filter__single-component a:active {
     color: #fff;
     text-decoration: none;
 }
 
-.components-button {
+.filter__button {
     font-size: 18px;
     color: #000;
 }
 
-.components-button:hover,  .components-button:focus, .components-button:active {
+.filter__button:hover,  .filter__button:focus, .filter__button:active {
     color: #000!important;
 }
 
 @media (max-width: 768px) {
-    .cart-image {
+    .cart {
         margin-top: 0;
         margin-right: 20px;
     }
 
-    .shopping-cart {
+    .cart__content {
         top: 4em;
         right: 2.5em;
     }
@@ -352,24 +353,24 @@ button:focus, button:active, input[type="button"]:focus, input[type="button"]:ac
         padding-top: 260px;
     }
 
-    .quantity {
+    .basket__quantity {
         padding-left: 40%;
     }
 
-    .shopping-amount {
+    .cart__amount {
         top: 0px;
         right: 32px;
     }
 }
 
 @media (max-width: 581px) {
-    .gallery-item {
+    .pizza {
         width: 100%;
     }
 }
 
 @media (max-width: 441px) {
-    .quantity {
+    .basket__quantity {
         padding-left: 22%;
     }
 }
