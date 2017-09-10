@@ -2,33 +2,39 @@
     <div id="app">
         <div class="container">
 
-            <input type="text" v-model="searchParameter" placeholder="Search in list">
+            <h1 v-if="!orders.length">Error with getting data from server</h1>
+            <hr>
+            <div v-if="orders.length">
+                <input type="text" v-model="searchParameter" placeholder="Search in list">
+                <hr>
+                <table class="table table-striped table-bordered">
+                    <tbody>
+                    <tr>
+                        <th v-for="column in columns"
+                            @click="sort(column.id)"
+                            :class="{'active' : sortParameter === column.id, 'reverse': sortParameter === column.id && reverse}">
+                            {{ column.text }}
+                        </th>
 
-            <pagination ref="pagination" for="filteredOrders" :records="filteredOrders.length" :per-page="10"></pagination>
+                    </tr>
+                    <tr v-for="order in currentOrders">
+                        <td>{{ order.RecordID }}</td>
+                        <td class="col-md-2">{{ order.OrderID }}</td>
+                        <td class="col-md-2">{{ order.ShipCountry }} - {{ order.ShipCity }}</td>
+                        <td class="col-md-2">{{ order.ShipCity }}</td>
+                        <td class="col-md-1">{{ order.Currency }}</td>
+                        <td class="col-md-1">{{ order.ShipDate }}</td>
+                        <td class="col-md-1">{{ order.Latitude }}</td>
+                        <td class="col-md-1">{{ statuses[order.Status - 1] }}</td>
+                        <td class="col-md-1">{{ types[order.Type - 1] }}</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-            <table v-if="orders.length" class="table table-striped table-bordered">
-                <tbody>
-                <tr>
-                    <th v-for="column in columns"
-                        @click="sort(column.id)"
-                        :class="{'active' : sortParameter === column.id, 'reverse': sortParameter === column.id && reverse}">
-                        {{ column.text }}
-                    </th>
+                <pagination ref="pagination" for="filteredOrders" :records="filteredOrders.length" :per-page="10"></pagination>
+            </div>
 
-                </tr>
-                <tr v-for="order in currentOrders">
-                    <td>{{ order.RecordID }}</td>
-                    <td class="col-md-2">{{ order.OrderID }}</td>
-                    <td class="col-md-2">{{ order.ShipCountry }} - {{ order.ShipCity }}</td>
-                    <td class="col-md-2">{{ order.ShipCity }}</td>
-                    <td class="col-md-1">{{ order.Currency }}</td>
-                    <td class="col-md-1">{{ order.ShipDate }}</td>
-                    <td class="col-md-1">{{ order.Latitude }}</td>
-                    <td class="col-md-1">{{ statuses[order.Status - 1] }}</td>
-                    <td class="col-md-1">{{ types[order.Type - 1] }}</td>
-                </tr>
-                </tbody>
-            </table>
+
         </div>
 
     </div>
@@ -131,11 +137,11 @@
             const customActions = {
                 fetchData: { method: 'GET'}
             };
-            this.resource = this.$resource('default.php', {}, customActions);
+            this.resource = this.$resource('data.json', {}, customActions);
             this.resource.fetchData()
                 .then(response => response.json())
                 .then(data => {
-                    this.orders = data.data;
+                    this.orders = data ? data : [];
                 });
             PaginationEvent.$on('vue-pagination::filteredOrders', page => {
                 this.page = page;

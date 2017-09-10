@@ -9,7 +9,7 @@ Vue.use(VueResource);
 Vue.use(VuePagination);
 Vue.use(VueLodash, lodash);
 
-Vue.http.options.root = 'http://keenthemes.com/metronic/preview/inc/api/datatables/demos/';
+Vue.http.options.root = 'https://orders-database.firebaseio.com/';
 
 new Vue({
   el: '#app',
