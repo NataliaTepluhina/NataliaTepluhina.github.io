@@ -1,0 +1,13 @@
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+#delete {
+    margin: 20px 0;
+}
+
+.selected {
+    background-color: #8c8c8c;
+}
