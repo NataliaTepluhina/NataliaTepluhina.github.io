@@ -1,8 +1,8 @@
 <template>
   <div class="slide-container">
     <section class="slide-content-overlay">
-      <h1 class="slide-title">{{currentSlide.title}}</h1>
-      <div class="slide-content">
+      <h1 class="slide-title" :class="{main: !currentSlide.contentType}">{{currentSlide.title}}</h1>
+      <div class="slide-content" v-if="currentSlide.contentType">
         <div v-if="currentSlide.contentType === 'image'">
           <slide-image :imageUrl="currentSlide.url"></slide-image>
         </div>
@@ -36,7 +36,7 @@
     },
     computed: {
       currentSlide() {
-        return this.slidesData.find(slide => slide.id === parseInt(this.$route.params.id))
+        return this.slidesData.find(slide => slidesData.indexOf(slide) === parseInt(this.$route.params.id))
       }
     }
   }
@@ -53,7 +53,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     color: #edbfff;
     font-family: 'Titillium Web', sans-serif;
@@ -63,15 +63,20 @@
       position: relative;
       width: 100%;
       max-width: 1420px;
-      min-height: 650px;
       z-index: 2;
       .slide-title {
         font-size: 56px;
         border-bottom: 3px solid #edbfff;
+        &.main {
+          border: none;
+          text-align: center;
+          font-size: 72px;
+        }
       }
       .slide-content {
         padding-top: 40px;
         width: 100%;
+        min-height: 650px;
       }
     }
   }

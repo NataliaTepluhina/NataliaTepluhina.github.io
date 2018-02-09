@@ -1,12 +1,13 @@
 export const slidesData = [
   {
-    id: 1,
+    title: "GraphQL & Apollo",
+  },
+  {
     title: "Companies using GraphQL",
     contentType: "image",
     url: 'https://i.imgur.com/BCJiAoU.png'
   },
   {
-    id: 2,
     title: "GraphQL Features",
     contentType: "list",
     items: [
@@ -16,28 +17,29 @@ export const slidesData = [
     ]
   },
   {
-    id: 3,
     title: "GraphQL vs REST",
     contentType: "image",
     url: 'https://i.imgur.com/LELpIJO.png'
   },
   {
-    id: 4,
     title: "...one more request",
     contentType: "image",
     url: 'https://i.imgur.com/LELpIJO.png'
   },
   {
-    id: 5,
     title: "...and one more",
     contentType: "image",
     url: 'https://i.imgur.com/LELpIJO.png'
   },
   {
-    id: 6,
     title: "GraphQL: all you need with one query",
     contentType: "image",
     url: 'https://i.imgur.com/qbyEEIK.png'
+  },
+  {
+    title: "Fetching data with queries",
+    contentType: "iframe",
+    url: 'https://graphqlbin.com/qx2xHk'
   },
 
 ];

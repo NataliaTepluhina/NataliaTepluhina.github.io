@@ -1,12 +1,12 @@
 <template>
   <main class="slide-container">
     <div class="blurred"></div>
-    <i class="fas fa-angle-left" :class="{disabled: currentSlide.id === 1}"
+    <i class="fas fa-angle-left" :class="{disabled: slidesData.indexOf(currentSlide) === 0}"
        @click="prevSlide($route.params.id)"></i>
     <transition :name="isDirectionForward ? 'slide-fade' : 'slide-fade-reverse'" mode="out-in">
       <router-view :key="$route.params.id"></router-view>
     </transition>
-    <i class="fas fa-angle-right" :class="{disabled: currentSlide.id === slidesData.length}"
+    <i class="fas fa-angle-right" :class="{disabled: slidesData.indexOf(currentSlide) === (slidesData.length - 1)}"
        @click="nextSlide($route.params.id)"></i>
   </main>
 </template>
@@ -24,14 +24,14 @@
     methods: {
       prevSlide(slide) {
         const previousSlide = parseInt(slide) - 1;
-        if (previousSlide > 0) {
+        if (previousSlide >= 0) {
           this.$router.push({ path: `/slide/${previousSlide}` });
           this.isDirectionForward = false;
         }
       },
       nextSlide(slide) {
         let nextSlide = parseInt(slide) + 1;
-        if (nextSlide <= slidesData.length) {
+        if (nextSlide < slidesData.length) {
           this.$router.push({ path: `/slide/${nextSlide}` });
           this.isDirectionForward = true;
         }
@@ -39,7 +39,7 @@
     },
     computed: {
       currentSlide() {
-        return this.slidesData.find(slide => slide.id === parseInt(this.$route.params.id))
+        return this.slidesData.find(slide => slidesData.indexOf(slide) === parseInt(this.$route.params.id))
       }
     }
   }
