@@ -1,7 +1,5 @@
 <template>
   <div class="slide-container">
-    <i class="fas fa-angle-left" :class="{disabled: currentSlide.id === 1}"
-       @click="prevSlide($route.params.id)"></i>
     <section class="slide-content-overlay">
       <h1 class="slide-title">{{currentSlide.title}}</h1>
       <div class="slide-content">
@@ -16,8 +14,6 @@
         </div>
       </div>
     </section>
-    <i class="fas fa-angle-right" :class="{disabled: currentSlide.id === slidesData.length}"
-       @click="nextSlide($route.params.id)"></i>
   </div>
 </template>
 
@@ -26,7 +22,6 @@
   import SlideImage from './types/SlideImage'
   import SlideList from './types/SlideList'
   import SlideIframe from './types/SlideIframe'
-  import { eventBus } from '../main'
   export default {
     name: 'slide',
     components: {
@@ -42,22 +37,6 @@
     computed: {
       currentSlide() {
         return this.slidesData.find(slide => slide.id === parseInt(this.$route.params.id))
-      }
-    },
-    methods: {
-      prevSlide(slide) {
-        const previousSlide = parseInt(slide) - 1;
-        if (previousSlide > 0) {
-          this.$router.push({ path: `/slide/${previousSlide}` });
-          eventBus.$emit('prevSlide')
-        }
-      },
-      nextSlide(slide) {
-        let nextSlide = parseInt(slide) + 1;
-        if (nextSlide <= slidesData.length) {
-          this.$router.push({ path: `/slide/${nextSlide}` });
-          eventBus.$emit('nextSlide')
-        }
       }
     }
   }
@@ -80,20 +59,11 @@
     font-family: 'Titillium Web', sans-serif;
     box-sizing: border-box;
     background: none;
-    .fas {
-      z-index: 2;
-      font-size: 90px;
-      cursor: pointer;
-      &.disabled {
-        opacity: .5;
-        cursor: default;
-      }
-    }
     .slide-content-overlay {
       position: relative;
       width: 100%;
       max-width: 1420px;
-      min-height: 750px;
+      min-height: 650px;
       z-index: 2;
       .slide-title {
         font-size: 56px;

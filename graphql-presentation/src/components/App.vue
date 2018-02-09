@@ -1,35 +1,54 @@
 <template>
   <main class="slide-container">
     <div class="blurred"></div>
+    <i class="fas fa-angle-left" :class="{disabled: currentSlide.id === 1}"
+       @click="prevSlide($route.params.id)"></i>
     <transition :name="isDirectionForward ? 'slide-fade' : 'slide-fade-reverse'" mode="out-in">
       <router-view :key="$route.params.id"></router-view>
     </transition>
+    <i class="fas fa-angle-right" :class="{disabled: currentSlide.id === slidesData.length}"
+       @click="nextSlide($route.params.id)"></i>
   </main>
 </template>
 
 <script>
-  import { eventBus } from '../main'
+  import { slidesData } from '../data/content'
   export default {
     name: 'app',
     data() {
       return {
         isDirectionForward: true,
+        slidesData
       }
     },
-    created() {
-      eventBus.$on('prevSlide', () => {
-        this.isDirectionForward = false;
-      });
-      eventBus.$on('nextSlide', () => {
-        this.isDirectionForward = true;
-      })
+    methods: {
+      prevSlide(slide) {
+        const previousSlide = parseInt(slide) - 1;
+        if (previousSlide > 0) {
+          this.$router.push({ path: `/slide/${previousSlide}` });
+          this.isDirectionForward = false;
+        }
+      },
+      nextSlide(slide) {
+        let nextSlide = parseInt(slide) + 1;
+        if (nextSlide <= slidesData.length) {
+          this.$router.push({ path: `/slide/${nextSlide}` });
+          this.isDirectionForward = true;
+        }
+      }
+    },
+    computed: {
+      currentSlide() {
+        return this.slidesData.find(slide => slide.id === parseInt(this.$route.params.id))
+      }
     }
   }
 </script>
 
 <style lang="scss">
-  body {
+  html, body {
     margin: 0;
+    height: 100%;
   }
 
   .slide-container {
@@ -37,8 +56,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 50px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url("../assets/graphql-bg.png");
     background-size: cover;
     color: #edbfff;
@@ -52,6 +72,16 @@
       left: 0;
       right: 0;
       background-color: rgba(0, 0, 0, .8);
+    }
+  }
+
+  .fas {
+    z-index: 2;
+    font-size: 90px;
+    cursor: pointer;
+    &.disabled {
+      opacity: .5;
+      cursor: default;
     }
   }
 

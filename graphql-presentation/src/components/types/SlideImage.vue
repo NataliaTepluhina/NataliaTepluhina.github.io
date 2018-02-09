@@ -15,9 +15,8 @@
 
 <style scoped lang="scss">
   .image-container {
-    display: flex;
-    justify-content: center;
     width: 100%;
+    text-align: center;
     img {
       max-width: 100%;
     }
