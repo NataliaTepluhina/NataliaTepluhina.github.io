@@ -12,22 +12,33 @@
         <div v-else-if="currentSlide.contentType === 'iframe'">
           <slide-iframe :iframeUrl="currentSlide.url"></slide-iframe>
         </div>
+        <div v-else-if="currentSlide.contentType === 'code'">
+          <slide-code :codeSnippets="currentSlide.snippets"></slide-code>
+        </div>
+        <div v-else-if="currentSlide.contentType === 'complex'">
+          <slide-custom></slide-custom>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-  import { slidesData } from '../data/content'
+  import {slidesData} from '../data/content'
   import SlideImage from './types/SlideImage'
   import SlideList from './types/SlideList'
   import SlideIframe from './types/SlideIframe'
+  import SlideCode from './types/SlideCode'
+  import SlideCustom from './types/SlideCustom'
+
   export default {
     name: 'slide',
     components: {
       SlideImage,
       SlideList,
-      SlideIframe
+      SlideIframe,
+      SlideCustom,
+      SlideCode
     },
     data() {
       return {
@@ -70,13 +81,13 @@
         &.main {
           border: none;
           text-align: center;
-          font-size: 72px;
+          font-size: 96px;
         }
       }
       .slide-content {
         padding-top: 40px;
         width: 100%;
-        min-height: 650px;
+        min-height: 550px;
       }
     }
   }

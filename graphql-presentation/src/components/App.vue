@@ -12,7 +12,8 @@
 </template>
 
 <script>
-  import { slidesData } from '../data/content'
+  import {slidesData} from '../data/content'
+
   export default {
     name: 'app',
     data() {
@@ -25,14 +26,14 @@
       prevSlide(slide) {
         const previousSlide = parseInt(slide) - 1;
         if (previousSlide >= 0) {
-          this.$router.push({ path: `/slide/${previousSlide}` });
+          this.$router.push({path: `/slide/${previousSlide}`});
           this.isDirectionForward = false;
         }
       },
       nextSlide(slide) {
         let nextSlide = parseInt(slide) + 1;
         if (nextSlide < slidesData.length) {
-          this.$router.push({ path: `/slide/${nextSlide}` });
+          this.$router.push({path: `/slide/${nextSlide}`});
           this.isDirectionForward = true;
         }
       }
@@ -88,8 +89,8 @@
   .slide-fade-enter-active, .slide-fade-leave-active, .slide-fade-reverse-enter-active, .slide-fade-reverse-leave-active {
     transition: all .6s ease;
   }
-  .slide-fade-enter, .slide-fade-reverse-leave-to
-  {
+
+  .slide-fade-enter, .slide-fade-reverse-leave-to {
     transform: translateX(100px);
     opacity: 0;
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="list-container">
     <ul v-for="(item, index) in items" :key="index">
-      <li>{{item}}</li>
+      <li v-html="item">{{item}}</li>
     </ul>
   </div>
 </template>
@@ -17,9 +17,13 @@
 
 <style scoped lang="scss">
   ul {
+    margin-left: 40px;
     li {
-      font-size: 48px;
-      padding-top: 60px;
+      font-size: 36px;
+      padding-bottom: 10px;
+      /deep/ a {
+        color: #c104cd
+      }
     }
   }
 </style>
