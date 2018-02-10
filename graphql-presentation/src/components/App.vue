@@ -1,13 +1,13 @@
 <template>
-  <main class="slide-container">
+  <main class="slide-container" tabindex="0" @keyup.space="nextSlide()">
     <div class="blurred"></div>
     <i class="fas fa-angle-left" :class="{disabled: slidesData.indexOf(currentSlide) === 0}"
-       @click="prevSlide($route.params.id)"></i>
+       @click="prevSlide()"></i>
     <transition :name="isDirectionForward ? 'slide-fade' : 'slide-fade-reverse'" mode="out-in">
       <router-view :key="$route.params.id"></router-view>
     </transition>
     <i class="fas fa-angle-right" :class="{disabled: slidesData.indexOf(currentSlide) === (slidesData.length - 1)}"
-       @click="nextSlide($route.params.id)"></i>
+       @click="nextSlide()"></i>
   </main>
 </template>
 
@@ -23,15 +23,15 @@
       }
     },
     methods: {
-      prevSlide(slide) {
-        const previousSlide = parseInt(slide) - 1;
+      prevSlide() {
+        const previousSlide = parseInt(this.$route.params.id) - 1;
         if (previousSlide >= 0) {
           this.$router.push({path: `/slide/${previousSlide}`});
           this.isDirectionForward = false;
         }
       },
-      nextSlide(slide) {
-        let nextSlide = parseInt(slide) + 1;
+      nextSlide() {
+        let nextSlide = parseInt(this.$route.params.id) + 1;
         if (nextSlide < slidesData.length) {
           this.$router.push({path: `/slide/${nextSlide}`});
           this.isDirectionForward = true;
