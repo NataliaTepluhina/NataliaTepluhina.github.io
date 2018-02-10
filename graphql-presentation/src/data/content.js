@@ -66,6 +66,18 @@ export const slidesData = [
     url: 'https://graphqlbin.com/L90ZtX'
   },
   {
+    title: "GraphQL Disadvantages",
+    contentType: "list",
+    items: [
+      "You need to learn how to set up GraphQL",
+      "You need to send the queries from the client => extra code in your client",
+      "You need to define the schema beforehand => extra work before you get results",
+      "You need to have a graphql endpoint on your server",
+      "Graphql queries are more bytes than simply going to a REST endpoint",
+      "The server needs to do more processing"
+    ]
+  },
+  {
     title: "Apollo Client",
     contentType: "list",
     items: [
