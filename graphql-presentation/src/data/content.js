@@ -24,12 +24,12 @@ export const slidesData = [
   {
     title: "...one more request",
     contentType: "image",
-    url: 'https://i.imgur.com/LELpIJO.png'
+    url: 'https://i.imgur.com/0jA0upb.png'
   },
   {
     title: "...and one more",
     contentType: "image",
-    url: 'https://i.imgur.com/LELpIJO.png'
+    url: 'https://i.imgur.com/8clud56.png'
   },
   {
     title: "GraphQL: all you need with one query",
