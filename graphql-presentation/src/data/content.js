@@ -105,14 +105,14 @@ export const slidesData = [
     title: "Useful links",
     contentType: "list",
     items: [
-      '<a href="http://graphql.org/learn/">Official GraphQL Docs</a>',
+      '<a href="http://graphql.org/learn/" target="_blank">Official GraphQL Docs</a>',
       `Apollo Integration:
       <ul>
-        <li><a href="https://www.apollographql.com/docs/react/index.html">React</a></li>
-        <li><a href="https://www.apollographql.com/docs/angular/">Angular</a></li>
-        <li><a href="https://github.com/Akryum/vue-apollo">Vue</a></li>
+        <li><a href="https://www.apollographql.com/docs/react/index.html" target="_blank">React</a></li>
+        <li><a href="https://www.apollographql.com/docs/angular/" target="_blank">Angular</a></li>
+        <li><a href="https://github.com/Akryum/vue-apollo" target="_blank">Vue</a></li>
       </ul>`,
-      '<a href="https://developer.github.com/v4/">Github GraphQL API</a>',
+      '<a href="https://developer.github.com/v4/" target="_blank">Github GraphQL API</a>',
     ]
   },
 
